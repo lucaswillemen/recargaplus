@@ -1,4 +1,8 @@
 ﻿<?php
+
+//http://plasticbrain.net/wp-content/themes/plasticbrain2016/dist/images/bg-new.jpg
+
+
 if (isset($_GET['lang'])) {
 	$lang = $_GET['lang'];
 }else{
@@ -19,9 +23,30 @@ if ($lang == 'pt') {
   <link rel="stylesheet" href="css/grid.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
+<style type="text/css">
+	body { 
+  background: url(http://plasticbrain.net/wp-content/themes/plasticbrain2016/dist/images/bg-new.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: white;
+}
+.input-lg {
+    border-radius: 0px;
+}
+.btn-group-lg>.btn, .btn-lg {
+    border-radius: 0px;
+}
+.panel-default {
+    border-color: rgba(221, 221, 221, 0.25);
+}
+.panel {
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.25);
+}
+</style>
   <script src="js/jquery.js"></script>
-  <script src="js/jquery-migrate-1.2.1.js"></script>
 
   <!--[if lt IE 9]>
   <html class="lt-ie9">
@@ -51,16 +76,17 @@ if ($lang == 'pt') {
     <section class="well6">
         <div class="text-center">
         <div class="col-md-4 col-lg-4 col-sm-10"></div>
-            <div class="col-md-4 col-lg-4 col-sm-12">
+            <div class="col-md-4 col-lg-4 col-sm-12 panel panel-default">
+            <form>
               <h2><?php echo $text['vamos_comecar']; ?></h2>
               <h4><?php echo $text['informe_celular']; ?></h4>
-              <input type="" name="" class="form-control cel ">
+              <input type="" name="" class="form-control cel input-lg">
               <h4><?php echo $text['informe_operadora']; ?></h4>
-              <select class="form-control">
+              <select class="form-control input-lg">
               	<option>Vivo</option>
               </select>
-              <button class="btn btn-lg btn-primary"><?php echo $text['start']; ?></button>
-              
+              <button type="button" onclick="start()" class="btn btn-lg btn-primary"><?php echo $text['start']; ?></button><br><br>
+              </form>
             </div>
         </div>
       </section>
@@ -148,9 +174,6 @@ if ($lang == 'pt') {
   <footer id="contacts">
     <div class="container">
       <div class="row">
-        <div class="grid_3 right">
-          
-        </div>
         <div class="grid_4">
           <ul class="social-list">
             <li>
