@@ -1,0 +1,31 @@
+﻿//--------------------------------------------------------------
+//                       Floated menu
+//--------------------------------------------------------------
+
+$item-margin: 35px;
+
+header .nav {
+  float: right;
+}
+
+.sf-menu {
+  @include clearfix;
+  display: inline-block;
+
+  > li {
+    position: relative;
+    float: left;
+
+    & + li {
+      margin-left: $item-margin;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .sf-menu {
+    display: none;
+  }
+}
+
+

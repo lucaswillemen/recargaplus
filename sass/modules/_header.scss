@@ -1,0 +1,26 @@
+/*========================================================
+                     HEADER  Section
+=========================================================*/
+header {
+  padding: 29px 0;
+  background: $header-bg;
+
+  text-align: center;
+}
+
+/*==================     Brand     ======================*/
+.brand {
+  display: inline-block;
+
+  &_name{
+    color: #383838;
+    span{
+      color: #737272;
+    }
+    overflow: hidden;
+  }
+
+  &_slogan{
+
+  }
+}

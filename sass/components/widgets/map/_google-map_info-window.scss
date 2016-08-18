@@ -1,0 +1,46 @@
+/*==================  GOOGLE MAP Info Window   =======================*/
+$info-window-bg: #fff;
+$info-window-bg-opacity: 1;
+$info-window-tr-w: 33px;
+$info-window-tr-h: 17px;
+
+.gm-wrapper {
+  > div{
+    background-color: $info-window-bg ;
+    background-color: rgba($info-window-bg, $info-window-bg-opacity) ;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -($info-window-tr-w / 2);
+      @include triangle(bottom, $info-window-tr-w, $info-window-tr-h, rgba($info-window-bg, $info-window-bg-opacity));
+
+      .lt-ie9 &{
+        border-color: $info-window-bg transparent transparent transparent;
+      }
+    }
+
+    * {
+      box-shadow: 0 0 0 #000 !important;
+      background-color: transparent !important;
+      border-color: transparent!important;
+    }
+  }
+}
+
+.gm-style-iw {
+  font: 400 16px/24px  'Trebuchet MS', sans-serif;
+  color: #31353d;
+
+  .iw-content{
+    padding: 25px 50px 30px;
+  }
+
+  @media (max-width: 767px) {
+    .iw-content{
+      padding: 0;
+    }
+  }
+}

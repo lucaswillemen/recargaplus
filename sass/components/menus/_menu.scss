@@ -1,0 +1,118 @@
+/*========================   Menu   ==========================*/
+@import "floated-menu";
+
+//--------------------------------------------------------------
+//                       Menu Styles
+//--------------------------------------------------------------
+.sf-menu {
+  font: 700 20px/22px $c;
+  text-transform: uppercase;
+  a {
+    display: block;
+  }
+}
+
+//--------------------------------------------------------------
+//                     Menu item styles
+//--------------------------------------------------------------
+.sf-menu {
+  > li {
+    > a {
+      position: relative;
+      color: #3e3e3e;
+
+      &:before{
+        content: $fa-caret-down;
+        position: absolute;
+        left: 0;
+        right: 0;
+        text-align: center;
+        top: -35px;
+        font: 400 18px $fa;
+        color: #95C03A;
+        opacity: 0;
+        @include transition(.3s all ease);
+
+        .lt-ie9 &{
+          display: none;
+        }
+      }
+    }
+
+    &.active > a , &.sfHover > a, > a:hover {
+      &:before{
+        top: -25px;
+        opacity: 1;
+
+        .lt-ie9 &{
+          display: block;
+        }
+      }
+    }
+
+    > a:active {
+      &:before{
+        top: -20px;
+      }
+    }
+  }
+}
+
+//--------------------------------------------------------------
+//                   Sub menu lvl1 styles
+//--------------------------------------------------------------
+.sf-menu ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 220px;
+  margin-top: 30px;
+  margin-left: -110px;
+  padding: 10px 0 10px;
+  font-size: 14px;
+
+  background: #fff;
+  z-index: 2;
+
+  @include box-sizing(border-box);
+}
+
+.sf-menu > li > ul{
+  @include box-shadow(0 0 2px 0 rgba(#000, .5));
+}
+
+//--------------------------------------------------------------
+//                 Sub menu lvl1 item styles
+//--------------------------------------------------------------
+.sf-menu ul {
+  > li {
+    > a {
+      color: #3e3e3e;
+      padding: 5px 20px;
+    }
+
+    &.sfHover > a, > a:hover {
+      color: #ffffff;
+      background: $secondary3;
+    }
+  }
+}
+
+//--------------------------------------------------------------
+//                   Sub menu lvl2 styles
+//--------------------------------------------------------------
+.sf-menu ul ul {
+  position: static;
+  top: 100%;
+  left: 0;
+  width: auto;
+  margin-top: 0;
+  margin-left: 0;
+  padding: 0;
+
+  background: #fff;
+  z-index: 4;
+
+  @include box-sizing(border-box);
+}
