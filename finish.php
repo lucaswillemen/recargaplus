@@ -12,43 +12,51 @@ if ($lang == 'pt') {
 	include 'language/pt.php';
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title><?php echo $text['titulo']; ?></title>
-  <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="format-detection" content="telephone=no"/>
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="css/grid.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<style type="text/css">
-	body { 
-  background: url(http://plasticbrain.net/wp-content/themes/plasticbrain2016/dist/images/bg-new.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  color: white;
-}
-.input-lg {
-    border-radius: 0px;
-}
-.btn-group-lg>.btn, .btn-lg {
-    border-radius: 0px;
-}
-.panel-default {
-    border-color: rgba(221, 221, 221, 0.25);
-}
-.panel {
-    margin-bottom: 20px;
-    background-color: rgba(255, 255, 255, 0.25);
-}
-</style>
-  <script src="js/jquery.js"></script>
+    <!DOCTYPE html>
+    <html lang="en">
 
-  <!--[if lt IE 9]>
+    <head>
+        <title>
+            <?php echo $text['titulo']; ?>
+        </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="format-detection" content="telephone=no" />
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="css/grid.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <style type="text/css">
+            body {
+                background: url(http://plasticbrain.net/wp-content/themes/plasticbrain2016/dist/images/bg-new.jpg) no-repeat center center fixed;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+                color: white;
+            }
+            
+            .input-lg {
+                border-radius: 0px;
+            }
+            
+            .btn-group-lg>.btn,
+            .btn-lg {
+                border-radius: 0px;
+            }
+            
+            .panel-default {
+                border-color: rgba(221, 221, 221, 0.25);
+            }
+            
+            .panel {
+                margin-bottom: 20px;
+                background-color: rgba(255, 255, 255, 0.25);
+            }
+        </style>
+        <script src="js/jquery.js"></script>
+
+        <!--[if lt IE 9]>
   <html class="lt-ie9">
   <div style=' clear: both; text-align:center; position: relative;'>
     <a href="http://windows.microsoft.com/en-US/internet-explorer/..">
@@ -59,87 +67,98 @@ if ($lang == 'pt') {
   <script src="js/html5shiv.js"></script>
   <![endif]-->
 
-  <script src='js/device.min.js'></script>
-</head>
+        <script src='js/device.min.js'></script>
+    </head>
 
-<body>
-<div class="page">
-  <!--========================================================
+    <body>
+        <div class="page">
+            <!--========================================================
                             HEADER
   =========================================================-->
- 
-  <!--========================================================
+
+            <!--========================================================
                             CONTENT
   =========================================================-->
-  
-    <section id="testimonials">
-    <section class="well6">
-        <div class="text-center">
-        <div class="col-md-4 col-lg-4 col-sm-10"></div>
-            <div class="col-md-4 col-lg-4 col-sm-12 panel panel-default">
-            <form>
-              <h2><?php echo $text['vamos_comecar']; ?></h2>
-              <h4><?php echo $text['informe_celular']; ?></h4>
-              <input type="" name="" class="form-control cel input-lg">
-              <h4><?php echo $text['informe_operadora']; ?></h4>
-              <select class="form-control input-lg">
+
+            <section id="testimonials">
+                <section class="well6">
+                    <div class="text-center" id="p1">
+                        <div class="col-md-4 col-lg-4 col-sm-10"></div>
+                        <div class="col-md-4 col-lg-4 col-sm-12 panel panel-default">
+                            <form>
+                                <h2><?php echo $text['vamos_comecar']; ?></h2>
+                                <h4><?php echo $text['informe_celular']; ?></h4>
+                                <input type="" name="" class="form-control cel input-lg">
+                                <h4><?php echo $text['informe_operadora']; ?></h4>
+                                <select class="form-control input-lg">
               	<option>Vivo</option>
               </select>
-              <button type="button" onclick="start()" class="btn btn-lg btn-primary"><?php echo $text['start']; ?></button><br><br>
-              </form>
-            </div>
-        </div>
-      </section>
-      </section>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
+                                <button type="button" onclick="start()" class="btn btn-lg btn-primary"><?php echo $text['start']; ?></button><br><br>
+                            </form>
+                        </div>
+                    </div>
+                    <div id="p2">
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <script type="text/javascript">
+                    function start() {
+                        $("#p1").hide()
+                        $("#p2").show()
+                    }
+                </script>
+            </section>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
 
-      <section class="parallax parallax1" data-parallax-speed="0.2">
-        <div class="container">
-          <div class="row">
-            <div class="grid_6 wow fadeInLeft" data-wow-delay="0.2s">
-              <p>
-                <em>
+            <section class="parallax parallax1" data-parallax-speed="0.2">
+                <div class="container">
+                    <div class="row">
+                        <div class="grid_6 wow fadeInLeft" data-wow-delay="0.2s">
+                            <p>
+                                <em>
                   <span>Special</span>
                   Price for you and your friends
                 </em>
-              </p>
+                            </p>
 
-              <p>
-                Ceritaesa eciegast nveriti vert asety kertya aset aplicaboserde
-                nerafae lorempsu dolore miutstrae sasers.
-              </p>
+                            <p>
+                                Ceritaesa eciegast nveriti vert asety kertya aset aplicaboserde nerafae lorempsu dolore miutstrae sasers.
+                            </p>
 
-              <a class="btn4" href='#'>read more</a>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-    </section>
-<!--
+                            <a class="btn4" href='#'>read more</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            </section>
+            <!--
     <section>
       <section class="well5 bg-dark">
         <div class="container center">
@@ -168,50 +187,51 @@ if ($lang == 'pt') {
     </div>
   </main>-->
 
-  <!--========================================================
+            <!--========================================================
                             FOOTER
   =========================================================-->
-  <footer id="contacts">
-    <div class="container">
-      <div class="row">
-        <div class="grid_4">
-          <ul class="social-list">
-            <li>
-              <a class="fa fa-facebook" href="#"></a>
-            </li>
-            <li>
-              <a class="fa fa-google-plus" href="#"></a>
-            </li>
-            <li>
-              <a class="fa fa-rss" href="#"></a>
-            </li>
-            <li>
-              <a class="fa fa-pinterest" href="#"></a>
-            </li>
-            <li>
-              <a class="fa fa-linkedin" href="#"></a>
-            </li>
-          </ul>
+            <footer id="contacts">
+                <div class="container">
+                    <div class="row">
+                        <div class="grid_4">
+                            <ul class="social-list">
+                                <li>
+                                    <a class="fa fa-facebook" href="#"></a>
+                                </li>
+                                <li>
+                                    <a class="fa fa-google-plus" href="#"></a>
+                                </li>
+                                <li>
+                                    <a class="fa fa-rss" href="#"></a>
+                                </li>
+                                <li>
+                                    <a class="fa fa-pinterest" href="#"></a>
+                                </li>
+                                <li>
+                                    <a class="fa fa-linkedin" href="#"></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="grid_5">
+                            <div class="copyright">
+                                <?php echo $text['titulo']; ?> © <span id="copyright-year"></span>
+                                <!-- {%FOOTER_LINK} -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
         </div>
-        <div class="grid_5">
-          <div class="copyright">
-            <?php echo $text['titulo']; ?> © <span id="copyright-year"></span>
-            <!-- {%FOOTER_LINK} -->
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-</div>
-<script type="text/javascript" src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
-<script>
-$('.cel').mask('(00) 00000-0000');
-		console.log(localStorage.verify)
-		console.log("test")
-	if (localStorage.verify != 'true') {
-		location.href = "index.php"
-	}
-</script>
-<!--coded by Diversant-->
-</body>
-</html>
+        <script type="text/javascript" src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+        <script>
+            $('.cel').mask('(00) 00000-0000');
+            console.log(localStorage.verify)
+            console.log("test")
+            if (localStorage.verify != 'true') {
+                location.href = "index.php"
+            }
+        </script>
+        <!--coded by Diversant-->
+    </body>
+
+    </html>

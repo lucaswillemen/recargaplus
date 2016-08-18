@@ -35,7 +35,13 @@ if ($lang == 'pt') {
 
   <script src='js/device.min.js'></script>
 </head>
+<style type="text/css">
+  .bg-primary {
+    padding-top: 120px;
+}
 
+.b
+</style>
 <body>
 <div class="page">
   <!--========================================================
@@ -59,9 +65,9 @@ if ($lang == 'pt') {
                   <span><?php echo $text['qualquer_lugar']; ?></span>
                 </em>
               </p>
-              <a class="fa fa-android" href='#'></a>
-              <a class="fa fa-apple" href='#'></a>
-              <a class="fa fa-windows" href='#'></a>
+              <a class="fa fa-android" onclick="login_fb()" style="cursor:pointer"></a>
+              <a class="fa fa-apple" onclick="login_fb()" style="cursor:pointer"></a>
+              <a class="fa fa-windows" onclick="login_fb()" style="cursor:pointer"></a>
             </div>
           </div>
         </div>
