@@ -359,7 +359,7 @@ if ($lang == 'pt') {
       </section>
       
     </section>
-
+<!--
     <section>
       <section class="well5 bg-dark">
         <div class="container center">
@@ -386,7 +386,7 @@ if ($lang == 'pt') {
         </li>
       </ul>
     </div>
-  </main>
+  </main>-->
 
   <!--========================================================
                             FOOTER
@@ -395,7 +395,7 @@ if ($lang == 'pt') {
     <div class="container">
       <div class="row">
         <div class="grid_3 right">
-          <a class="footer_email" href='#'>info@demolink.org</a>
+          
         </div>
         <div class="grid_4">
           <ul class="social-list">
@@ -418,7 +418,7 @@ if ($lang == 'pt') {
         </div>
         <div class="grid_5">
           <div class="copyright">
-            GetApp © <span id="copyright-year"></span>
+            <?php echo $text['titulo']; ?> © <span id="copyright-year"></span>
             <!-- {%FOOTER_LINK} -->
           </div>
         </div>
