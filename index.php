@@ -77,30 +77,27 @@ if ($lang == 'pt') {
               <h2 class="secondary3 wow fadeInLeft" data-wow-delay="0.2s"><?php echo $text['facil_pratico']; ?></h2>
 
               <p class="large secondary2 wow fadeInLeft" data-wow-delay="0.4s">
-                Moleacene anrit meases dey
-                uam socis natoqu eagnis dimte dulmuese feugiata lesuerleceas strices phaledaty fenanec sit aser erment.
-                Ut
-                ts dolor apegete lement velursusen elnean ctor wisi et urna aseserta. Aliquam eratvpatis ac turpis.
+                <?php echo $text['facil_pratico_explicacao']; ?>
               </p>
             </div>
             <div class="grid_6">
               <img src=images/page-2_img02.jpg alt=""/>
             </div>
             <div class="grid_3">
-              <h3 class="secondary4 wow fadeInRight" data-wow-delay="0.4s">Social networks</h3>
+              <h3 class="secondary4 wow fadeInRight" data-wow-delay="0.4s"><?php echo $text['passo_1']; ?></h3>
 
               <p class="wow fadeInRight" data-wow-delay="0.6s">
-                Soera wisi eturna. Aliquam mitras vytrasas
-                saceraturpis. Integeutrum kertyua.</p>
+                <?php echo $text['passo_1_explicacao']; ?></p>
 
-              <h3 class="secondary5 wow fadeInRight" data-wow-delay="0.8s">email</h3>
+              <h3 class="secondary5 wow fadeInRight" data-wow-delay="0.8s"><?php echo $text['passo_2']; ?></h3>
 
-              <p class="wow fadeInRight" data-wow-delay="1s">Doletas liquam mitras vytrasas miaertases
-                 delertas kerode vtreas toresade.</p>
+              <p class="wow fadeInRight" data-wow-delay="1s">
+              <?php echo $text['passo_2_explicacao']; ?></p>
 
-              <h3 class="secondary3 wow fadeInRight" data-wow-delay="1.2s">e-commerce</h3>
+              <h3 class="secondary3 wow fadeInRight" data-wow-delay="1.2s"><?php echo $text['passo_3']; ?></h3>
 
-              <p class="wow fadeInRight" data-wow-delay="1.4s">Casey yoleacene anrit ma hasesera deyuas. Ketety miwert betyudes muytas.</p>
+              <p class="wow fadeInRight" data-wow-delay="1.4s">
+              <?php echo $text['passo_3_explicacao']; ?></p>
             </div>
           </div>
         </div>
@@ -278,7 +275,6 @@ if ($lang == 'pt') {
       </section>
     </section>
 
-    -->
     <section id="news">
       <section class="well5 bg-dark">
         <div class="container">
@@ -324,8 +320,22 @@ if ($lang == 'pt') {
         </div>
       </section>
     </section>
+    -->
 
     <section id="testimonials">
+    <section class="well6">
+        <div class="container center">
+          <div class="row">
+            <div class="grid_10 preffix_1">
+              <h2><?php echo $text['vamos_comecar']; ?></h2>
+              <h4><?php echo $text['acesse_conta']; ?></h4>
+
+              <p class="ins1"><?php echo $text['login_facebook']; ?></p>
+              <a style="background-color:#3b5998; color:white" class="btn5" href='#'><i class="fa fa-facebook"></i> <?php echo $text['login_botao']; ?></a>
+            </div>
+          </div>
+        </div>
+      </section>
       <section class="parallax parallax1" data-parallax-speed="0.2">
         <div class="container">
           <div class="row">
@@ -347,25 +357,7 @@ if ($lang == 'pt') {
           </div>
         </div>
       </section>
-      <section class="well6">
-        <div class="container center">
-          <div class="row">
-            <div class="grid_10 preffix_1">
-              <h2>testimonials</h2>
-              <h4>SARAH Barrow</h4>
-
-              <p class="ins1">Csenim admin sciporiosam nasaer. Veasisi ut aliquimonseq uatueras niuasuis autem vel
-                              eumiure
-                              repasce nasu
-                              kerdas rerertas. Vasuis autem vel eum iure reprehenderit, qui in ea voluptate velit esse,
-                              quam nihil
-                              molestiae consequatur.
-                              vel illum, qui.dolorem eum fugiat, quo voluptas nulla pariatur.</p>
-              <a class="btn5" href='#'>more testimonials</a>
-            </div>
-          </div>
-        </div>
-      </section>
+      
     </section>
 
     <section>
