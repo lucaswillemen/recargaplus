@@ -21,7 +21,18 @@ $text = array(
     'vamos_comecar' => 'Vamos começar?',
     'acesse_conta' => 'Acesse sua conta',
     'login_facebook' => 'Basta clicar em acessar sua conta pelo facebook, vamos apenas ler o seu nome para criar sua conta caso ainda não exista',
-    'login_botao' => 'Login com facebook'
+    'login_botao' => 'Login com facebook',
+    'compartilhar_botao' => 'Compartilhar',
+    'error' => 'Alguma coisa deu errado, tente novamente!',
+
+
+
+    //Page finish
+
+
+    'informe_celular' => 'Informe o número do seu celular',
+    'informe_operadora' => 'Selecione sua operadora',
+    'start' => 'Inserir recarga'
 
 );
 ?>

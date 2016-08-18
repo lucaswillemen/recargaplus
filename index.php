@@ -13,6 +13,7 @@ if ($lang == 'pt') {
 <head>
   <title><?php echo $text['titulo']; ?></title>
   <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="format-detection" content="telephone=no"/>
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="css/grid.css">
@@ -329,9 +330,21 @@ if ($lang == 'pt') {
             <div class="grid_10 preffix_1">
               <h2><?php echo $text['vamos_comecar']; ?></h2>
               <h4><?php echo $text['acesse_conta']; ?></h4>
-
               <p class="ins1"><?php echo $text['login_facebook']; ?></p>
-              <a style="background-color:#3b5998; color:white" class="btn5" href='#'><i class="fa fa-facebook"></i> <?php echo $text['login_botao']; ?></a>
+<br>
+              <div id="p1">
+              <h4><?php echo $text['passo_1']; ?> </h4>
+              <a onclick="login_fb()" style="background-color:#3b5998; color:white; cursor:pointer" class="btn5"><i class="fa fa-facebook"></i> <?php echo $text['login_botao']; ?></a>
+              </div>
+              <div id="p2" style="display:none">
+              <h4><?php echo $text['passo_2']; ?> </h4>
+              <a onclick="share()" style="background-color:#3b5998; color:white; cursor:pointer" class="btn5"><i class="fa fa-facebook"></i> <?php echo $text['compartilhar_botao']; ?></a>
+              </div>
+              <br>
+              <div id="error" style="display:none; ">
+              <h4 style="color:red"><?php echo $text['error']; ?> </h4>
+              
+              </div>
             </div>
           </div>
         </div>
@@ -428,7 +441,67 @@ if ($lang == 'pt') {
 </div>
 
 <script src="js/script.js"></script>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1820488118183325',
+      xfbml      : true,
+      version    : 'v2.7'
+    });
+  };
 
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+<script type="text/javascript">
+	function login_fb() {
+        FB.login(function(r) {
+        	//console.log(r)
+            fbcheck(r)
+        }, {
+            scope: 'public_profile,email, publish_actions'
+        });
+    }
+    function fbcheck(r) {
+        FB.api('/me', {
+            fields: 'id,name, email, first_name, about, gender, location, picture.type(normal), cover'
+        }, function(response) {
+        	if (!response.error) {
+        		console.log("aceito")
+        		$("#p1").hide()
+        		$("#p2").show()
+				$("#error").hide()
+        	}else{
+				$("#error").show()
+			}
+            
+        });
+    }
+    function share (){
+    	FB.ui({
+		  method: 'share',
+		  href: 'https://developers.facebook.com/docs/',
+		}, function(response){
+			console.log(response)
+			if (response.post_id) {
+				$("#p2").hide()
+				$("#error").hide()
+				localStorage.verify = true
+				location.href = "finish.php"
+			}else{
+				$("#error").show()
+			}
+		});
+    }
+
+</script>
 <!--coded by Diversant-->
 </body>
 </html>
