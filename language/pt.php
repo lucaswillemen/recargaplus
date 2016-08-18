@@ -23,6 +23,7 @@ $text = array(
     'login_facebook' => 'Basta clicar em acessar sua conta pelo facebook, vamos apenas ler o seu nome para criar sua conta caso ainda não exista',
     'login_botao' => 'Login com facebook',
     'compartilhar_botao' => 'Compartilhar',
+    'compartilhar_botao2' => 'Compartilhe nossa ferramenta para continuar',
     'error' => 'Alguma coisa deu errado, tente novamente!',
 
 

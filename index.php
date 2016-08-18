@@ -40,7 +40,13 @@ if ($lang == 'pt') {
     padding-top: 120px;
 }
 
-.b
+.htt {
+    margin-top: 178px;
+    font-family: "Quicksand", sans-serif;
+    font-size: 36px;
+    text-transform: uppercase;
+        line-height: normal;
+}
 </style>
 <body>
 <div class="page">
@@ -62,12 +68,23 @@ if ($lang == 'pt') {
                   <span><?php echo $text['ola']; ?>,</span>
                   <span><?php echo $text['recarga_gratis']; ?></span>
                   <?php echo $text['para_cellar']; ?><br>
-                  <span><?php echo $text['qualquer_lugar']; ?></span>
+                  <span id="ht"><?php echo $text['qualquer_lugar']; ?></span>
                 </em>
               </p>
+              <div id="p1"><br>
               <a class="fa fa-android" onclick="login_fb()" style="cursor:pointer"></a>
               <a class="fa fa-apple" onclick="login_fb()" style="cursor:pointer"></a>
               <a class="fa fa-windows" onclick="login_fb()" style="cursor:pointer"></a>
+              </div>
+              <div id="p2" style="display:none">
+              <p class="htt" style="color:white"><?php echo $text['compartilhar_botao2']; ?> </p>
+              <a onclick="share()" style="background-color:#3b5998; color:white; cursor:pointer" class="btn5"><i class="fa fa-facebook"></i> <?php echo $text['compartilhar_botao']; ?></a>
+              </div>
+              <br>
+              <div id="error" style="display:none; ">
+              <h4 style="color:red"><?php echo $text['error']; ?>  </h4>
+              
+              </div>
             </div>
           </div>
         </div>
@@ -482,6 +499,7 @@ if ($lang == 'pt') {
         	if (!response.error) {
         		console.log("aceito")
         		$("#p1").hide()
+            $("#ht").hide()
         		$("#p2").show()
 				$("#error").hide()
         	}else{
