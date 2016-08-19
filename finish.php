@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 //http://plasticbrain.net/wp-content/themes/plasticbrain2016/dist/images/bg-new.jpg
 
@@ -129,7 +129,7 @@ if ($lang == 'pt') {
                         	$("#pg").css('width', '20%')
                         $("#txt").append("<p>Conectado</p>")
                         $("#txt").append("<p>Verificando telefone</p>")
-                        }, 2000);
+                        }, 4500);
                     }
                 </script>
             </section>
