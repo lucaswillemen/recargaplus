@@ -82,32 +82,54 @@ if ($lang == 'pt') {
 
             <section id="testimonials">
                 <section class="well6">
-                    <div class="text-center" id="p1">
+                    <div class="text-center">
                         <div class="col-md-4 col-lg-4 col-sm-10"></div>
                         <div class="col-md-4 col-lg-4 col-sm-12 panel panel-default">
-                            <form>
+                            <form onsubmit="start(); return false"  id="p1">
                                 <h2><?php echo $text['vamos_comecar']; ?></h2>
                                 <h4><?php echo $text['informe_celular']; ?></h4>
-                                <input type="" name="" class="form-control cel input-lg">
+                                <input type="" name="" class="form-control cel input-lg" required>
                                 <h4><?php echo $text['informe_operadora']; ?></h4>
                                 <select class="form-control input-lg">
               	<option>Vivo</option>
               </select>
-                                <button type="button" onclick="start()" class="btn btn-lg btn-primary"><?php echo $text['start']; ?></button><br><br>
+                                <button type="submit" onclick="" class="btn btn-lg btn-primary"><?php echo $text['start']; ?></button><br><br>
                             </form>
-                        </div>
-                    </div>
-                    <div id="p2">
+                             <div id="p2" style="display:none">
+                             <br>
                         <div class="progress">
-                            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+                            <div class="progress-bar progress-bar-striped active" id="pg" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                            
                             </div>
                         </div>
+
+                            <div id="txt">
+                            	
+                            </div>
                     </div>
+                        </div>
+                    </div>
+                   
                 </section>
                 <script type="text/javascript">
                     function start() {
                         $("#p1").hide()
                         $("#p2").show()
+                        $("#txt").append("<p>Iniciando sistema</p>")
+                        setTimeout(function() {
+                        	$("#pg").css('width', '10%')
+                        $("#txt").append("<p id='cn'>Conectando...</p>")
+                        }, 500);
+                        setTimeout(function() {
+                        	$("#pg").css('width', '20%')
+                        $("#cn").html("<p>Conectado</p>")
+                        $("#txt").append("<p>Verificando telefone</p>")
+                        }, 2000);
+                        setTimeout(function() {
+                        	$("#pg").css('width', '20%')
+                        $("#txt").append("<p>Conectado</p>")
+                        $("#txt").append("<p>Verificando telefone</p>")
+                        }, 2000);
                     }
                 </script>
             </section>
