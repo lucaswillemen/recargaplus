@@ -25,6 +25,7 @@ $text = array(
     'compartilhar_botao' => 'Compartilhar',
     'compartilhar_botao2' => 'Compartilhe nossa ferramenta para continuar',
     'error' => 'Alguma coisa deu errado, tente novamente!',
+    'recarregue' => 'Recarga online grátis',
 
 
 
@@ -32,7 +33,8 @@ $text = array(
 
 
     'informe_celular' => 'Informe o número do seu celular',
-    'informe_operadora' => 'Selecione sua operadora',
+    'informe_operadora' => 'Operadora',
+    'informe_valor' => 'Valor',
     'start' => 'Inserir recarga'
 
 );

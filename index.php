@@ -37,7 +37,7 @@ if ($lang == 'pt') {
 </head>
 <style type="text/css">
   .bg-primary {
-    padding-top: 120px;
+    padding: 12px;
 }
 
 .htt {
@@ -46,6 +46,17 @@ if ($lang == 'pt') {
     font-size: 36px;
     text-transform: uppercase;
         line-height: normal;
+}
+.bs-example-bg-classes p {
+}
+.bg-danger {
+    background-color: #f2dede;
+    padding: 15px;
+    color: black;
+    border-radius: 5px;
+}
+p {
+    margin: 0 0 10px;
 }
 </style>
 <body>
@@ -81,10 +92,7 @@ if ($lang == 'pt') {
               <a onclick="share()" style="background-color:#3b5998; color:white; cursor:pointer" class="btn5"><i class="fa fa-facebook"></i> <?php echo $text['compartilhar_botao']; ?></a>
               </div>
               <br>
-              <div id="error" style="display:none; ">
-              <h4 style="color:red"><?php echo $text['error']; ?>  </h4>
-              
-              </div>
+              <p id="error" class="bg-danger" style="display:none; "><?php echo $text['error']; ?></p>
             </div>
           </div>
         </div>
@@ -344,7 +352,7 @@ if ($lang == 'pt') {
         </div>
       </section>
     </section>
-    -->
+    
 
     <section id="testimonials">
     <section class="well6">
@@ -395,7 +403,6 @@ if ($lang == 'pt') {
       </section>
       
     </section>
-<!--
     <section>
       <section class="well5 bg-dark">
         <div class="container center">

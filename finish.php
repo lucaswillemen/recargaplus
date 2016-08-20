@@ -85,31 +85,47 @@ if ($lang == 'pt') {
                     <div class="text-center">
                         <div class="col-md-4 col-lg-4 col-sm-10"></div>
                         <div class="col-md-4 col-lg-4 col-sm-12 panel panel-default">
-                            <form onsubmit="start(); return false"  id="p1">
-                                <h2><?php echo $text['vamos_comecar']; ?></h2>
-                                <h4><?php echo $text['informe_celular']; ?></h4>
+                            <form onsubmit="start(); return false" id="p1">
+                                <h4><?php echo $text['recarregue']; ?></h4>
+                                <hr>
+                                <p>
+                                    <?php echo $text['informe_celular']; ?>
+                                </p>
                                 <input type="" name="" class="form-control cel input-lg" required>
-                                <h4><?php echo $text['informe_operadora']; ?></h4>
-                                <select class="form-control input-lg">
-              	<option>Vivo</option>
-              </select>
+                                <br>
+                                <div class="col-md-6">
+                                    <p>
+                                        <?php echo $text['informe_operadora']; ?>
+                                    </p>
+                                    <select class="form-control input-lg">
+					              	<option>Vivo</option>
+					              </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>
+                                        <?php echo $text['informe_valor']; ?>
+                                    </p>
+                                    <select class="form-control input-lg">
+					              	<option>R$ 15,00</option>
+					              </select>
+                                </div>
                                 <button type="submit" onclick="" class="btn btn-lg btn-primary"><?php echo $text['start']; ?></button><br><br>
                             </form>
-                             <div id="p2" style="display:none">
-                             <br>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-striped active" id="pg" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
-                            
-                            </div>
-                        </div>
+                            <div id="p2" style="display:none">
+                                <br>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped active" id="pg" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
 
-                            <div id="txt">
-                            	
+                                    </div>
+                                </div>
+
+                                <div id="txt">
+
+                                </div>
                             </div>
-                    </div>
                         </div>
                     </div>
-                   
+
                 </section>
                 <script type="text/javascript">
                     function start() {
@@ -117,19 +133,24 @@ if ($lang == 'pt') {
                         $("#p2").show()
                         $("#txt").append("<p>Iniciando sistema</p>")
                         setTimeout(function() {
-                        	$("#pg").css('width', '10%')
-                        $("#txt").append("<p id='cn'>Conectando...</p>")
+                            $("#pg").css('width', '10%')
+                            $("#txt").append("<p id='cn'>Conectando...</p>")
                         }, 500);
                         setTimeout(function() {
-                        	$("#pg").css('width', '20%')
-                        $("#cn").html("<p>Conectado</p>")
-                        $("#txt").append("<p>Verificando telefone</p>")
+                            $("#pg").css('width', '20%')
+                            $("#cn").html("<p>Conectado <i class='fa fa-check-circle'></i> </p>")
+                            $("#txt").append("<p id='ver'>Verificando telefone</p>")
                         }, 2000);
                         setTimeout(function() {
-                        	$("#pg").css('width', '20%')
-                        $("#txt").append("<p>Conectado</p>")
-                        $("#txt").append("<p>Verificando telefone</p>")
+                            $("#pg").css('width', '30%')
+                            $("#ver").html("<p>Verificado <i class='fa fa-check-circle'></i></p>")
+                            $("#txt").append("<p id='aut'>Autenticando conta...</p>")
                         }, 4500);
+                        setTimeout(function() {
+                            $("#pg").css('width', '45%')
+                            $("#aut").html("<p>Conta autenticada <i class='fa fa-check-circle'></i></p>")
+                            $("#txt").append("<p>Verificação anti robô...</p>")
+                        }, 6500);
                     }
                 </script>
             </section>
