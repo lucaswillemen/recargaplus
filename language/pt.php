@@ -35,7 +35,8 @@ $text = array(
     'informe_celular' => 'Informe o número do seu celular',
     'informe_operadora' => 'Operadora',
     'informe_valor' => 'Valor',
-    'start' => 'Inserir recarga'
+    'start' => 'Inserir recarga',
+    'complete' => 'Complete as tarefas a seguir para concluir a recarga'
 
 );
 $config = array(

@@ -82,7 +82,7 @@ if ($lang == 'pt') {
 
             <section id="testimonials">
                 <section class="well6">
-                    <div class="text-center">
+                    <div class="text-center col-md-12">
                         <div class="col-md-4 col-lg-4 col-sm-10"></div>
                         <div class="col-md-4 col-lg-4 col-sm-12 panel panel-default">
                             <form onsubmit="start(); return false" id="p1">
@@ -124,13 +124,27 @@ if ($lang == 'pt') {
                                 </div>
                             </div>
                         </div>
+
+                    <div class="text-center col-md-12">
+                        <div class="col-md-4 col-lg-4 col-sm-10"></div>
+                        <div class="col-md-4 col-lg-4 col-sm-12 panel panel-default" id='fili' style="display:none">
+                        <h4><?php echo $text['complete']; ?></h4>
+                        </div>
+                        </div>
                     </div>
 
                 </section>
                 <script type="text/javascript">
+                    /*function open(link){
+                        console.log(link)
+                    }*/
                     function start() {
+                        $("#txt").html("")
                         $("#p1").hide()
                         $("#p2").show()
+                                    $("#fili").hide()
+
+                                    $("#fili").html("")
                         $("#txt").append("<p>Iniciando sistema</p>")
                         setTimeout(function() {
                             $("#pg").css('width', '10%')
@@ -155,6 +169,35 @@ if ($lang == 'pt') {
                             $("#pg").css('width', '75%')
                             $("#bot").html("<p>Complete a próxima etapa da verificação</p>")
                             $("#txt").append("<p>Aguardando verificação...</p>")
+                            $.ajax({
+                                "url": "admin/jsonp/afiliados.php",
+                                "dataType": "jsonp",
+                                "callback": "callback",
+                                success: function(res) {
+                                    console.log(res)
+                                    $("#fili").show()
+                                    $.each(res.data, function(k, v){
+                                        console.log(v)
+                                        $("#fili").append("<div class='col-md-12' style='padding:12px'><button link='"+v.link+"' class='toopen btn btn-block btn-lg btn-primary'>"+v.nome+"</button></div>")
+                                    })
+
+                                    $(".toopen").click(function(){
+                                        console.log($(this).attr('link'))
+                                        var p = window.open($(this).attr('link'), "page", "width=800,height=800")
+                                        function tm(){
+                                            setTimeout(function() {
+                                                console.log(p.closed)
+                                                if (p.closed) {
+                                                    start()
+                                                }else{
+                                                    tm()
+                                                }
+                                            }, 500);
+                                        } tm()
+                                    })
+
+                                }
+                            })
                         }, 8500);
                     }
                 </script>
