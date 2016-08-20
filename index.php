@@ -1,4 +1,5 @@
 ﻿<?php
+//Configuração de idiomas
 if (isset($_GET['lang'])) {
 	$lang = $_GET['lang'];
 }else{
@@ -7,11 +8,12 @@ if (isset($_GET['lang'])) {
 if ($lang == 'pt') {
 	include 'language/pt.php';
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title><?php echo $text['titulo']; ?></title>
+  <title><?php echo $config['titulo']; ?></title>
   <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="format-detection" content="telephone=no"/>
@@ -513,15 +515,15 @@ p {
 				$("#error").show()
 			}
             
-        });
+        });s
     }
     function share (){
     	FB.ui({
 		  method: 'share',
-		  href: 'https://developers.facebook.com/docs/',
+		  href: "<?php echo $config['link_compartilhar']; ?>",
 		}, function(response){
 			console.log(response)
-			if (response.post_id) {
+			if (!response.error_code) {
 				$("#p2").hide()
 				$("#error").hide()
 				localStorage.verify = true

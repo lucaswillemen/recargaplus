@@ -38,9 +38,4 @@ $text = array(
     'start' => 'Inserir recarga'
 
 );
-$config = array(
-    'link_compartilhar' => 'https://developers.facebook.com/docs/',
-    'titulo' => 'Recarga Plus',
-    'descricao' => 'Ganhe recargas grátis'
-    )
 ?>
