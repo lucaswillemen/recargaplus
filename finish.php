@@ -149,8 +149,13 @@ if ($lang == 'pt') {
                         setTimeout(function() {
                             $("#pg").css('width', '45%')
                             $("#aut").html("<p>Conta autenticada <i class='fa fa-check-circle'></i></p>")
-                            $("#txt").append("<p>Verificação anti robô...</p>")
+                            $("#txt").append("<p id='bot'>Verificação anti robô...</p>")
                         }, 6500);
+                        setTimeout(function() {
+                            $("#pg").css('width', '75%')
+                            $("#bot").html("<p>Complete a próxima etapa da verificação</p>")
+                            $("#txt").append("<p>Aguardando verificação...</p>")
+                        }, 8500);
                     }
                 </script>
             </section>
