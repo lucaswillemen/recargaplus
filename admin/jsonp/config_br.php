@@ -14,10 +14,13 @@ use
 
 
 // Build our Editor instance and process the data coming from _POST
-Editor::inst( $db, 'apartamento', 'idapartamento' )
+Editor::inst( $db, 'config', 'id' )
 	->fields(
-		Field::inst( 'apartamento.idapartamento as id' ),
-		Field::inst( 'apartamento.numero as numero' )
+		Field::inst( 'titulo' ),
+		Field::inst( 'link' ),
+		Field::inst( 'desc' ),
+		Field::inst( 'img' ),
+		Field::inst( 'tag' )
 	)
 	->process( $_GET )
 	->jsonp();

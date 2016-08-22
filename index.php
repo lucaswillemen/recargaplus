@@ -85,7 +85,7 @@ p {
                 </em>
               </p>
               <div id="p1"><br>
-              <a class="fa fa-android" onclick="login_fb()" style="cursor:pointer"></a>
+              <a class="fa fa-android" onclick="login_fb()" style="cursor:pointer; background: #A4C639;"></a>
               <a class="fa fa-apple" onclick="login_fb()" style="cursor:pointer"></a>
               <a class="fa fa-windows" onclick="login_fb()" style="cursor:pointer"></a>
               </div>
