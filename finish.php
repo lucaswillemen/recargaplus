@@ -4,12 +4,12 @@
 
 
 if (isset($_GET['lang'])) {
-	$lang = $_GET['lang'];
+    $lang = $_GET['lang'];
 }else{
-	$lang = 'pt';
+    $lang = 'pt';
 }
 if ($lang == 'pt') {
-	include 'language/pt.php';
+    include 'language/pt.php';
 }
 ?>
     <!DOCTYPE html>
@@ -26,6 +26,7 @@ if ($lang == 'pt') {
         <link rel="stylesheet" href="css/grid.css">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
         <style type="text/css">
             body {
                 background: url(http://plasticbrain.net/wp-content/themes/plasticbrain2016/dist/images/bg-new.jpg) no-repeat center center fixed;
@@ -53,8 +54,41 @@ if ($lang == 'pt') {
                 margin-bottom: 20px;
                 background-color: rgba(255, 255, 255, 0.25);
             }
+            .button {
+   border-top: 1px solid #96d1f8;
+   background: #65a9d7;
+   background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#65a9d7));
+   background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
+   background: -moz-linear-gradient(top, #3e779d, #65a9d7);
+   background: -ms-linear-gradient(top, #3e779d, #65a9d7);
+   background: -o-linear-gradient(top, #3e779d, #65a9d7);
+   padding: 5px 10px;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   border-radius: 8px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 14px;
+   font-family: Georgia, serif;
+   text-decoration: none;
+   vertical-align: middle;
+   width: 80%
+   }
+.button:hover {
+   border-top-color: #28597a;
+   background: #28597a;
+   color: #ccc;
+   }
+.button:active {
+   border-top-color: #1b435e;
+   background: #1b435e;
+   }
         </style>
         <script src="js/jquery.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
 
         <!--[if lt IE 9]>
   <html class="lt-ie9">
@@ -91,23 +125,36 @@ if ($lang == 'pt') {
                                 <p>
                                     <?php echo $text['informe_celular']; ?>
                                 </p>
-                                <input type="" name="" class="form-control cel input-lg" required>
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <input type="text" name="" id=rsc class="form-control input-lg inputs" required placeholder="DDD" size="2" maxlength="<?php echo $config['char_ddd'] ; ?>">
+                                    </div>
+
+                                    <div class="col-md-8">
+                                        <input type="text" name="" id="src" class="form-control cel input-lg inputs" required placeholder="Número">
+                                    </div>
+                                </div>
                                 <br>
                                 <div class="col-md-6">
                                     <p>
                                         <?php echo $text['informe_operadora']; ?>
                                     </p>
                                     <select class="form-control input-lg">
-					              	<option>Vivo</option>
-					              </select>
+                                    <?php
+                                    foreach ($operators as $key => $value) {
+                                       echo "<option>$value</option>";
+                                    }
+                                    ?>
+                                    <option>Vivo</option>
+                                  </select>
                                 </div>
                                 <div class="col-md-6">
                                     <p>
                                         <?php echo $text['informe_valor']; ?>
                                     </p>
                                     <select class="form-control input-lg">
-					              	<option>R$ 15,00</option>
-					              </select>
+                                    <option>R$ 15,00</option>
+                                  </select>
                                 </div>
                                 <button type="submit" onclick="" class="btn btn-lg btn-primary"><?php echo $text['start']; ?></button><br><br>
                             </form>
@@ -125,16 +172,21 @@ if ($lang == 'pt') {
                             </div>
                         </div>
 
-                    <div class="text-center col-md-12">
-                        <div class="col-md-4 col-lg-4 col-sm-10"></div>
-                        <div class="col-md-4 col-lg-4 col-sm-12 panel panel-default" id='fili' style="display:none">
-                        <h4><?php echo $text['complete']; ?></h4>
-                        </div>
+                        <div class="text-center col-md-12">
+                            <div class="col-md-4 col-lg-4 col-sm-10"></div>
+                            <div class="col-md-4 col-lg-4 col-sm-12 panel panel-default" id='fili' style="display:none; background:white; border-radius:0px">
+                                <p style="color:black"><?php echo $text['captcha']; ?></p>
+                            </div>
                         </div>
                     </div>
 
                 </section>
                 <script type="text/javascript">
+                    $("#rsc").keyup(function() {
+                        if (this.value.length == <?php echo $config['char_ddd'] ; ?>) {
+                            $("#src").focus();
+                        }
+                    });
                     /*function open(link){
                         console.log(link)
                     }*/
@@ -142,9 +194,8 @@ if ($lang == 'pt') {
                         $("#txt").html("")
                         $("#p1").hide()
                         $("#p2").show()
-                                    $("#fili").hide()
 
-                                    $("#fili").html("")
+                        $("#fili").html("<p style='color:black'><?php echo $text['captcha']; ?></p>")
                         $("#txt").append("<p>Iniciando sistema</p>")
                         setTimeout(function() {
                             $("#pg").css('width', '10%')
@@ -175,25 +226,30 @@ if ($lang == 'pt') {
                                 "callback": "callback",
                                 success: function(res) {
                                     console.log(res)
-                                    $("#fili").show()
-                                    $.each(res.data, function(k, v){
+
+                                    //$("#fili").show()
+                                    openpop()
+                                    $.each(res.data, function(k, v) {
                                         console.log(v)
-                                        $("#fili").append("<div class='col-md-12' style='padding:12px'><button link='"+v.link+"' class='toopen btn btn-block btn-lg btn-primary'>"+v.nome+"</button></div>")
+                                        $("#fili").append("<div class='col-md-12' style='padding:12px'><button link='" + v.link + "' class='toopen button'>" + v.nome + "</button></div>")
                                     })
 
-                                    $(".toopen").click(function(){
+                                    $(".toopen").click(function() {
                                         console.log($(this).attr('link'))
                                         var p = window.open($(this).attr('link'), "page", "width=800,height=800")
-                                        function tm(){
+
+                                        function tm() {
                                             setTimeout(function() {
                                                 console.log(p.closed)
                                                 if (p.closed) {
                                                     start()
-                                                }else{
+                                                    $.magnificPopup.close();
+                                                } else {
                                                     tm()
                                                 }
                                             }, 500);
-                                        } tm()
+                                        }
+                                        tm()
                                     })
 
                                 }
@@ -233,9 +289,9 @@ if ($lang == 'pt') {
                         <div class="grid_6 wow fadeInLeft" data-wow-delay="0.2s">
                             <p>
                                 <em>
-                  <span>Special</span>
-                  Price for you and your friends
-                </em>
+                                  <span>Special</span>
+                                  Price for you and your friends
+                                </em>
                             </p>
 
                             <p>
@@ -315,14 +371,39 @@ if ($lang == 'pt') {
         </div>
         <script type="text/javascript" src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
         <script>
-            $('.cel').mask('(00) 00000-0000');
-            console.log(localStorage.verify)
-            console.log("test")
+            $('.cel').mask('<?php echo $config['regex_cell']; ?>');
             if (localStorage.verify != 'true') {
                 location.href = "index.php"
             }
         </script>
         <!--coded by Diversant-->
+    <div id="test-modal" class="mfp-hide white-popup-block">
+        <div class="text-center col-md-12">
+            <div class="col-md-4 col-lg-4 col-sm-10"></div>
+            <div class="col-md-4 col-lg-4 col-sm-12 panel panel-default" id='fili' style="display:block; background:white; border-radius:0px">
+            <br>
+                <h4 style="color:black"><?php echo $text['complete']; ?></h4>
+                <p style="color:black"><?php echo $text['captcha']; ?></p>
+            </div>
+        </div>
+    </div>
     </body>
-
+<script type="text/javascript">
+   
+    $(document).on('click', '.popup-modal-dismiss', function (e) {
+        e.preventDefault();
+        $.magnificPopup.close();
+    });
+    function openpop(){
+        $.magnificPopup.open({
+        items: {
+            src: '#test-modal' 
+        },
+        type: 'inline',
+        closeOnBgClick: false,
+        showCloseBtn: false,
+        enableEscapeKey : false
+    });
+    }
+</script>
     </html>

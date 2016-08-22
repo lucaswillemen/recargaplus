@@ -26,6 +26,7 @@ $text = array(
     'compartilhar_botao2' => 'Compartilhe nossa ferramenta para continuar',
     'error' => 'Alguma coisa deu errado, tente novamente!',
     'recarregue' => 'Recarga online grátis',
+    'captcha' => 'Texto descritivo para usar no captcha porque hoje acordei com pouca criatividade',
 
 
 
@@ -42,6 +43,9 @@ $text = array(
 $config = array(
     'link_compartilhar' => 'https://developers.facebook.com/docs/',
     'titulo' => 'Recarga Plus',
-    'descricao' => 'Ganhe recargas grátis'
-    )
+    'descricao' => 'Ganhe recargas grátis',
+    'char_ddd' => 2,
+    'regex_cell' => '00000-0000'
+    );
+$operators = array('Vivo', 'Claro', 'Nextel', 'TIM', 'Oi');
 ?>
