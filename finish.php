@@ -290,9 +290,9 @@ if ($lang == 'pt') {
 
                                     //$("#fili").show()
                                     openpop()
+                                        $("#linksadd").html("")
                                     $.each(res.data, function(k, v) {
                                         console.log(v)
-                                        $("#linksadd").html("")
                                         $("#linksadd").append("<div class='col-md-12' style='padding:12px'><button link='" + v.link + "' class='toopen button'>" + v.nome + "</button></div>")
                                     })
 
