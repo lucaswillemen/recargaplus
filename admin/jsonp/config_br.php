@@ -18,6 +18,7 @@ Editor::inst( $db, 'config', 'id' )
 	->fields(
 		Field::inst( 'titulo' ),
 		Field::inst( 'link' ),
+		Field::inst( 'link2' ),
 		Field::inst( 'desc' ),
 		Field::inst( 'img' ),
 		Field::inst( 'tag' )

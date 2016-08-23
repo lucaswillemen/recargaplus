@@ -20,7 +20,7 @@
                         </div>
                         <div class="form-group">
                             <label>Segundo link para compartilhamento</label>
-                            <input type="url" class="form-control" placeholder="" name="data[link2]" id="link" required> 
+                            <input type="url" class="form-control" placeholder="" name="data[link2]" id="link2" required> 
                         </div>
                         <div class="form-group">
                             <label>Título para compartilhamento</label>
@@ -60,6 +60,7 @@ $.ajax({
     var pre = res.data[id]
     
     $("#link").val(pre.link)
+    $("#link2").val(pre.link2)
     $("#titulo").val(pre.titulo)
     $("#desc").val(pre.desc)
     $("#img").val(pre.img)
