@@ -1,0 +1,83 @@
+<div class="portlet light bordered">
+ 
+    <div class="row">
+        <div class="col-md-12 ">
+            <!-- BEGIN SAMPLE FORM PORTLET-->
+            <div class="portlet light bordered">
+                <div class="portlet-title">
+                    <div class="caption font-red-sunglo">
+                        <i class="icon-settings font-red-sunglo"></i>
+                        <span class="caption-subject bold uppercase"> Painel de configurações</span>
+                    </div>                    
+                </div>
+                <div class="portlet-body form">
+                    <form role="form" onsubmit="save(); return false;" id="form">
+                    <input type="hidden" name="action" value="edit">
+                    <input type="hidden" name="id" value="row_2">
+                        <div class="form-group">
+                            <label>Link para compartilhamento</label>
+                            <input type="url" class="form-control" placeholder="" name="data[link]" id="link" required> 
+                        </div>
+                        <div class="form-group">
+                            <label>Segundo link para compartilhamento</label>
+                            <input type="url" class="form-control" placeholder="" name="data[link2]" id="link2" required> 
+                        </div>
+                        <div class="form-group">
+                            <label>Título para compartilhamento</label>
+                            <input type="text" class="form-control" placeholder="" name="data[titulo]" id="titulo" required> 
+                        </div>
+                        <div class="form-group">
+                            <label>Descrição para compartilhamento</label>
+                            <textarea type="text" class="form-control" placeholder="" name="data[desc]" id="desc" required> </textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Imagem para compartilhamento</label>
+                            <input type="url" class="form-control" placeholder="" name="data[img]" id="img" required> 
+                        </div>
+                        <div class="form-group">
+                            <label>Tag de rastreamento</label>
+                            <textarea type="text" class="form-control" placeholder="" name="data[tag]" id="tag" rows="8" required> </textarea>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn blue">Salvar</button>
+                            <button type="button" class="btn default">Cancelar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+var id = 0
+$.ajax({
+    "url": "jsonp/config_br.php",
+    "dataType": "jsonp",
+    "callback": "callback", 
+    success: function(res){
+    console.log(res)
+
+    var pre = res.data[id]
+    
+    $("#link").val(pre.link)
+    $("#link2").val(pre.link2)
+    $("#titulo").val(pre.titulo)
+    $("#desc").val(pre.desc)
+    $("#img").val(pre.img)
+    $("#tag").val(pre.tag)
+}
+})
+    function save(){
+        var form = $('#form').serialize()
+        $.ajax({
+            "url": "jsonp/config_br.php",
+            "dataType": "jsonp",
+            "callback": "callback",
+            "data": form,
+            success: function(res) {               
+                console.log(res)
+            }
+        })
+        return false;
+    }
+</script>
