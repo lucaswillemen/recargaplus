@@ -54,7 +54,7 @@ if ($lang == 'pt') {
                 $("#p2").hide()
                 $("#error").hide()
                 localStorage.verify = true
-                location.href = "finish.php"
+                start()
             }else{
                 $("#error").show()
             }
