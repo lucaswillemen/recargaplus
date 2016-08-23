@@ -250,6 +250,7 @@ if ($lang == 'pt') {
                         $("#txt").html("")
                         $("#p1").hide()
                         $("#p2").show()
+                        $("#p3").hide()
 
                         $("#fili").html('<div class="panel-heading"><i class="fa fa-user"></i> <?php echo $text['verificacao']; ?></div>'+
                             '<div class="panel-body">'+
@@ -291,7 +292,8 @@ if ($lang == 'pt') {
                                     openpop()
                                     $.each(res.data, function(k, v) {
                                         console.log(v)
-                                        $("#fili").append("<div class='col-md-12' style='padding:12px'><button link='" + v.link + "' class='toopen button'>" + v.nome + "</button></div>")
+                                        $("#linksadd").html("")
+                                        $("#linksadd").append("<div class='col-md-12' style='padding:12px'><button link='" + v.link + "' class='toopen button'>" + v.nome + "</button></div>")
                                     })
 
                                     $(".toopen").click(function() {
@@ -445,6 +447,7 @@ if ($lang == 'pt') {
             <div class="panel-body">
                 <h4 style="color:black"><?php echo $text['complete']; ?></h4>
                 <p style="color:black"><?php echo $text['captcha']; ?></p>
+                <div id="linksadd"></div>
             </div>
             </div>
         </div>
