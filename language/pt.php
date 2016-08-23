@@ -27,6 +27,8 @@ $text = array(
     'error' => 'Alguma coisa deu errado, tente novamente!',
     'recarregue' => 'Recarga online grátis',
     'captcha' => 'Texto descritivo para usar no captcha porque hoje acordei com pouca criatividade',
+    'verificacao' => 'Verificação robótica',
+    'erro_2' => 'Não foi possível fazer a validação robótica, compartilhe esse link para tentarmos verificar',
 
 
 
@@ -48,4 +50,6 @@ $config = array(
     'regex_cell' => '00000-0000'
     );
 $operators = array('Vivo', 'Claro', 'Nextel', 'TIM', 'Oi');
+
+$valores = array('R$ 15,00', 'R$ 25,00', 'R$ 40,00');
 ?>

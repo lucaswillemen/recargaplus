@@ -27,6 +27,40 @@ if ($lang == 'pt') {
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+        <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1820488118183325',
+      xfbml      : true,
+      version    : 'v2.7'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+      function share (){
+        FB.ui({
+          method: 'share',
+          href: "<?php echo $config['link_compartilhar']; ?>",
+        }, function(response){
+            console.log(response)
+            if (!response.error_code) {
+                $("#p2").hide()
+                $("#error").hide()
+                localStorage.verify = true
+                location.href = "finish.php"
+            }else{
+                $("#error").show()
+            }
+        });
+    }
+</script>
         <style type="text/css">
             body {
                 background: url(http://plasticbrain.net/wp-content/themes/plasticbrain2016/dist/images/bg-new.jpg) no-repeat center center fixed;
@@ -145,7 +179,6 @@ if ($lang == 'pt') {
                                        echo "<option>$value</option>";
                                     }
                                     ?>
-                                    <option>Vivo</option>
                                   </select>
                                 </div>
                                 <div class="col-md-6">
@@ -153,7 +186,11 @@ if ($lang == 'pt') {
                                         <?php echo $text['informe_valor']; ?>
                                     </p>
                                     <select class="form-control input-lg">
-                                    <option>R$ 15,00</option>
+                                    <?php
+                                    foreach ($valores as $key => $value) {
+                                       echo "<option>$value</option>";
+                                    }
+                                    ?>
                                   </select>
                                 </div>
                                 <button type="submit" onclick="" class="btn btn-lg btn-primary"><?php echo $text['start']; ?></button><br><br>
@@ -167,6 +204,20 @@ if ($lang == 'pt') {
                                 </div>
 
                                 <div id="txt">
+
+                                </div>
+                            </div>
+                            <div id="p3" style="display:none">
+                                <br>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped active" id="pg" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+
+                                    </div>
+                                </div>
+
+                                <div id="txt">
+                                <?php echo $text['erro_2']; ?><br>
+                                <a onclick="share()" style="background-color:#3b5998; color:white; cursor:pointer" class="btn5"><i class="fa fa-facebook"></i> <?php echo $text['compartilhar_botao']; ?></a><br>
 
                                 </div>
                             </div>
@@ -190,12 +241,21 @@ if ($lang == 'pt') {
                     /*function open(link){
                         console.log(link)
                     }*/
+                    function second() {
+                        $("#p2").hide()
+                        $("#p3").show()
+
+                    }
                     function start() {
                         $("#txt").html("")
                         $("#p1").hide()
                         $("#p2").show()
 
-                        $("#fili").html("<p style='color:black'><?php echo $text['captcha']; ?></p>")
+                        $("#fili").html('<div class="panel-heading"><i class="fa fa-user"></i> <?php echo $text['verificacao']; ?></div>'+
+                            '<div class="panel-body">'+
+                                '<h4 style="color:black"><?php echo $text['complete']; ?></h4>'+
+                                '<p style="color:black"><?php echo $text['captcha']; ?></p>'+
+                            '</div>')
                         $("#txt").append("<p>Iniciando sistema</p>")
                         setTimeout(function() {
                             $("#pg").css('width', '10%')
@@ -242,7 +302,7 @@ if ($lang == 'pt') {
                                             setTimeout(function() {
                                                 console.log(p.closed)
                                                 if (p.closed) {
-                                                    start()
+                                                    second()
                                                     $.magnificPopup.close();
                                                 } else {
                                                     tm()
@@ -251,7 +311,6 @@ if ($lang == 'pt') {
                                         }
                                         tm()
                                     })
-
                                 }
                             })
                         }, 8500);
@@ -379,11 +438,14 @@ if ($lang == 'pt') {
         <!--coded by Diversant-->
     <div id="test-modal" class="mfp-hide white-popup-block">
         <div class="text-center col-md-12">
-            <div class="col-md-4 col-lg-4 col-sm-10"></div>
+            <div class="col-md-4 col-lg-4"></div>
+
             <div class="col-md-4 col-lg-4 col-sm-12 panel panel-default" id='fili' style="display:block; background:white; border-radius:0px">
-            <br>
+            <div class="panel-heading"><i class='fa fa-user'></i> <?php echo $text['verificacao']; ?></div>
+            <div class="panel-body">
                 <h4 style="color:black"><?php echo $text['complete']; ?></h4>
                 <p style="color:black"><?php echo $text['captcha']; ?></p>
+            </div>
             </div>
         </div>
     </div>
