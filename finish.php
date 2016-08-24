@@ -286,13 +286,13 @@ if ($lang == 'pt') {
                             </div>
                         </div>
                          <div class="col-md-4">
-                          <div class="panel" id="usr" style="color:black; text-align:left">
+                          <div class="panel" id="usr" style="color:black; text-align:left; display:none">
                           <h3 style="font-weight:300; text-align:center; color:white">Últimas recargas</h3>
                             
                           </div>
                         </div>
 
-                        <div class="text-center col-md-12">
+                        <div class="text-center col-md-12" >
                             <div class="col-md-4 col-lg-4 col-sm-10"></div>
                             <div class="col-md-4 col-lg-4 col-sm-12" style="padding: 0px">
                             <div class="panel panel-default" id='fili' style="display:none; background:white; border-radius:0px">
