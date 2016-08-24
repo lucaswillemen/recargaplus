@@ -138,6 +138,19 @@ if ($lang == 'pt') {
 }
 #txt > p{
 }
+
+        .tile {
+          width: 100%;
+          display: inline-block;
+          box-sizing: border-box;
+          background: #fff;
+          padding: 8px;
+          margin-bottom: 0px;
+          background-color: #2672EC;
+          color:white;
+          line-height: 44px;
+          font-weight: 100
+        }
         </style>
         <script src="js/jquery.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
@@ -272,6 +285,12 @@ if ($lang == 'pt') {
                                 </div>
                             </div>
                         </div>
+                         <div class="col-md-4">
+                          <div class="panel" id="usr" style="color:black; text-align:left">
+                          <h3 style="font-weight:300; text-align:center; color:white">Últimas recargas</h3>
+                            
+                          </div>
+                        </div>
 
                         <div class="text-center col-md-12">
                             <div class="col-md-4 col-lg-4 col-sm-10"></div>
@@ -285,6 +304,19 @@ if ($lang == 'pt') {
                     </div>
 
                 </section>
+                <script>
+                      $.ajax({
+                        "url": "admin/jsonp/user.php",
+                        "dataType": "jsonp",
+                        "callback": "callback",
+                        success: function(res) {
+                          console.log(res)
+                          $.each(res.data, function(k, v){
+                            $("#usr").append("<h4 class='tile' style='text-align:center'><img src='http://graph.facebook.com/"+v.fb_id+"/picture?type=square'> "+v.nome+"</h4><hr>")
+                          })
+                        }
+                    })
+                    </script>
                 <script type="text/javascript">
                     $("#rsc").keyup(function() {
                         if (this.value.length == <?php echo $config['char_ddd'] ; ?>) {

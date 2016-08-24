@@ -149,32 +149,45 @@ if ($lang == 'pt') {
                 <section id="about">
                     <section class="bg-primary">
                         <div class="container center">
-                                    <p>
-                                        <em>
-                                          <span><?php echo $text['ola']; ?>,</span>
-                                          <span><?php echo $text['recarga_gratis']; ?></span>
-                                          <?php echo $text['para_cellar']; ?><br><br><br><br>
-                                        </em>
-                                    </p>
-                                <br>
+                        <div class="col-md-3">
+                          <img src="images/phone.png" style="width:100%">
                         </div>
+                        <div class="col-md-6">
+                          <p>
+                              <em>
+                                <span><?php echo $text['ola']; ?>,</span>
+                                <span><?php echo $text['recarga_gratis']; ?></span>
+                                <?php echo $text['para_cellar']; ?><br>
+                              </em>
+                          </p>
+
+                                    <div id="p1" style="text-align:center"><br>
+                                        <a class="fa fa-android" onclick="login_fb()"></a>
+                                        <a class="fa fa-apple" onclick="login_fb()" style="cursor:pointer"></a>
+                                        <a class="fa fa-windows" onclick="login_fb()" style="cursor:pointer;"></a>
+                                    </div>
+                          
+                        </div>
+                        <div class="col-md-4">
+                         
+                        </div>
+
+                        </div>
+
                     </section>
+                    
+                    <div style="background-color:#3483d6"><br><br></div>
                     <section class="bg-primary" style="background: url(images/b_bg.png) no-repeat center 62%;margin-top: 0px;padding:0px">
                         <div class="container center">
                             <div class="row">
                                 <div class="grid_8 preffix_2">
                                     <p>
                                         <em>
-                                          <span id="ht" style="margin-top:50px; line-height: 28px;"><?php echo $text['qualquer_lugar']; ?></span>
+                                          <span id="ht" style="margin-top:24px; line-height: 38px;"><?php echo $text['qualquer_lugar']; ?></span>
                                         </em>
                                     </p>
-                                    <div id="p1"><br>
-                                        <a class="fa fa-android" onclick="login_fb()"></a>
-                                        <a class="fa fa-apple" onclick="login_fb()" style="cursor:pointer"></a>
-                                        <a class="fa fa-windows" onclick="login_fb()" style="cursor:pointer;"></a>
-                                    </div>
-                                    <div id="p2" style="display:none">
-                                        <p class="htt" style="color:white">
+                                    <div id="p2" style="display:none; ">
+                                        <p class="htt" style="color:white; margin-top:24px; line-height: 38px;">
                                             <?php echo $text['compartilhar_botao2']; ?> </p>
                                         <img onclick="share()" src="<?php echo $text['button_share_url']; ?>">
                                     </div>
