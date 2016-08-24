@@ -176,7 +176,7 @@ if ($lang == 'pt') {
 
                     </section>
                     
-                    <div style="background-color:#3483d6"><br><br></div>
+                    <div style="background-color:#3483d6"><br></div>
                     <section class="bg-primary" style="background: url(images/b_bg.png) no-repeat center 62%;margin-top: 0px;padding:0px">
                         <div class="container center">
                             <div class="row">
