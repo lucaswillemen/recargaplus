@@ -18,11 +18,11 @@ if ($lang == 'pt') {
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="format-detection" content="telephone=no"/>
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/grid.css">
   <link rel="stylesheet" href="css/style.css">
 
   <script src="js/jquery.js"></script>
-  <script src="js/jquery-migrate-1.2.1.js"></script>
 
   <!--[if lt IE 9]>
   <html class="lt-ie9">
@@ -60,8 +60,58 @@ if ($lang == 'pt') {
 p {
     margin: 0 0 10px;
 }
+.bg-primary .fa-android{
+  background-color: rgb(164, 198, 57) !important;
+  cursor: pointer;
+}
+.bg-primary .fa-apple {
+  background: rgb(173, 173, 173);
+}
+.bg-primary .fa-windows {
+background: rgba(46,141,239,1)
+}
+.bg-primary .fa-android:hover {
+    background-color: rgba(164,198,57,0.5) !important;
+}
+.bg-primary .fa-apple:hover {
+  background: rgb(173, 173, 173, 0.5)
+}
+.bg-primary .fa-windows:hover {
+background: rgba(46,141,239,0.5)
+}
 </style>
 <body>
+ <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Bônus Cred</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $text['idioma']; ?> <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li class="inline">
+                
+                <a href="#"><img src="flags/br.png"> <?php echo $text['idioma_br']; ?></a></li>
+                <li><a href="#"><img src="flags/es.png"> <?php echo $text['idioma_es']; ?></a></li>
+                <li><a href="#"><img src="flags/en.png"> <?php echo $text['idioma_en']; ?></a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
 <div class="page">
   <!--========================================================
                             HEADER
@@ -70,7 +120,7 @@ p {
   <!--========================================================
                             CONTENT
   =========================================================-->
-  <main id="content" class="content">
+  <main id="content" class="content" style="    margin-top: 50px;">
     <section id="about">
       <section class="bg-primary">
         <div class="container center">
@@ -80,22 +130,23 @@ p {
                 <em>
                   <span><?php echo $text['ola']; ?>,</span>
                   <span><?php echo $text['recarga_gratis']; ?></span>
-                  <?php echo $text['para_cellar']; ?><br>
+                  <?php echo $text['para_cellar']; ?><br><br><br><br>
                   <span id="ht"><?php echo $text['qualquer_lugar']; ?></span>
                 </em>
               </p>
               <div id="p1"><br>
-              <a class="fa fa-android" onclick="login_fb()" style="cursor:pointer; background: #A4C639;"></a>
+              <a class="fa fa-android" onclick="login_fb()"></a>
               <a class="fa fa-apple" onclick="login_fb()" style="cursor:pointer"></a>
-              <a class="fa fa-windows" onclick="login_fb()" style="cursor:pointer; background: #2E8DEF"></a>
+              <a class="fa fa-windows" onclick="login_fb()" style="cursor:pointer;"></a>
               </div>
               <div id="p2" style="display:none">
               <p class="htt" style="color:white"><?php echo $text['compartilhar_botao2']; ?> </p>
-              <a onclick="share()" style="background-color:#3b5998; color:white; cursor:pointer" class="btn5"><i class="fa fa-facebook"></i> <?php echo $text['compartilhar_botao']; ?></a>
+              <img onclick="share()" src="<?php echo $text['button_share_url']; ?>">
               </div>
               <br>
               <p id="error" class="bg-danger" style="display:none; "><?php echo $text['error']; ?></p>
             </div>
+            <br>
           </div>
         </div>
       </section>
@@ -107,17 +158,17 @@ p {
           <p class="center"><?php echo $text['simples_passos_2']; ?></p>
 
           <div class="row wrap">
-            <div class="grid_3">
+            <div class="col-md-3">
               <h2 class="secondary3 wow fadeInLeft" data-wow-delay="0.2s"><?php echo $text['facil_pratico']; ?></h2>
 
               <p class="large secondary2 wow fadeInLeft" data-wow-delay="0.4s">
                 <?php echo $text['facil_pratico_explicacao']; ?>
               </p>
             </div>
-            <div class="grid_6">
+            <div class="col-md-6">
               <img src=images/page-2_img02.jpg alt=""/>
             </div>
-            <div class="grid_3">
+            <div class="col-md-3">
               <h3 class="secondary4 wow fadeInRight" data-wow-delay="0.4s"><?php echo $text['passo_1']; ?></h3>
 
               <p class="wow fadeInRight" data-wow-delay="0.6s">
@@ -472,6 +523,7 @@ p {
   </footer>
 </div>
 
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="js/script.js"></script>
 <script>
   window.fbAsyncInit = function() {

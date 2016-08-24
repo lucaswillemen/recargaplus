@@ -120,6 +120,14 @@ if ($lang == 'pt') {
    border-top-color: #1b435e;
    background: #1b435e;
    }
+   .fa-check-circle {
+    color: green;
+   }
+   .panel-default>.panel-heading {
+    color: #333;
+    background-color: #e0b25e;
+    border-color: #ddd;
+}
         </style>
         <script src="js/jquery.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
@@ -139,6 +147,38 @@ if ($lang == 'pt') {
     </head>
 
     <body>
+     <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Bônus Cred</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $text['idioma']; ?> <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li class="inline">
+                
+                <a href="#"><img src="flags/br.png"> <?php echo $text['idioma_br']; ?></a></li>
+                <li><a href="#"><img src="flags/es.png"> <?php echo $text['idioma_es']; ?></a></li>
+                <li><a href="#"><img src="flags/en.png"> <?php echo $text['idioma_en']; ?></a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    <br>
+    <br>
         <div class="page">
             <!--========================================================
                             HEADER
@@ -225,8 +265,11 @@ if ($lang == 'pt') {
 
                         <div class="text-center col-md-12">
                             <div class="col-md-4 col-lg-4 col-sm-10"></div>
-                            <div class="col-md-4 col-lg-4 col-sm-12 panel panel-default" id='fili' style="display:none; background:white; border-radius:0px">
+                            <div class="col-md-4 col-lg-4 col-sm-12" style="padding: 0px">
+                            <div class="panel panel-default" id='fili' style="display:none; background:white; border-radius:0px">
+
                                 <p style="color:black"><?php echo $text['captcha']; ?></p>
+                            </div>
                             </div>
                         </div>
                     </div>
@@ -441,13 +484,14 @@ if ($lang == 'pt') {
     <div id="test-modal" class="mfp-hide white-popup-block">
         <div class="text-center col-md-12">
             <div class="col-md-4 col-lg-4"></div>
-
-            <div class="col-md-4 col-lg-4 col-sm-12 panel panel-default" id='fili' style="display:block; background:white; border-radius:0px">
+            <div class="col-md-4 col-lg-4 col-sm-12">
+            <div class=" panel panel-default" id='fili' style="display:block; background:white; border-radius:0px">
             <div class="panel-heading"><i class='fa fa-user'></i> <?php echo $text['verificacao']; ?></div>
             <div class="panel-body">
                 <h4 style="color:black"><?php echo $text['complete']; ?></h4>
                 <p style="color:black"><?php echo $text['captcha']; ?></p>
                 <div id="linksadd"></div>
+            </div>
             </div>
             </div>
         </div>
