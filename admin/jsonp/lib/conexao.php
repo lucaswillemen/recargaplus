@@ -12,7 +12,7 @@ $password = "cpdvgs90";
 	case 2:
 $host = "localhost"; 
 $username = "root"; 
-$password = "";
+$password = "Cpdnf@2016";
 		break;
 	
 	case 3:
