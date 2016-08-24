@@ -84,12 +84,16 @@ if ($lang == 'pt') {
         }
         
         .bg-primary .fa-apple:hover {
-            background: rgb(173, 173, 173, 0.5)
+            background: rgb(173, 173, 173, 0.3)
         }
         
         .bg-primary .fa-windows:hover {
-            background: rgba(46, 141, 239, 0.5)
+            background: rgba(46, 141, 239, 0.3)
         }
+        a:focus, a:hover {
+    color: #23527c;
+    text-decoration: none;
+}
     </style>
 
     <body>
@@ -147,7 +151,7 @@ if ($lang == 'pt') {
   =========================================================-->
             <main id="content" class="content" style="    margin-top: 50px;">
                 <section id="about">
-                    <section class="bg-primary">
+                    <section class="bg-primary"><br><br>
                         <div class="container center">
                         <div class="col-md-3">
                           <img src="images/phone.png" style="width:100%">
@@ -160,12 +164,13 @@ if ($lang == 'pt') {
                                 <?php echo $text['para_cellar']; ?><br>
                               </em>
                           </p>
+                          <br><br>
 
                                     <div id="p1" style="text-align:center"><br>
                                         <a class="fa fa-android" onclick="login_fb()"></a>
                                         <a class="fa fa-apple" onclick="login_fb()" style="cursor:pointer"></a>
                                         <a class="fa fa-windows" onclick="login_fb()" style="cursor:pointer;"></a>
-                                    </div>
+                                    </div><br><br>
                           
                         </div>
                         <div class="col-md-4">
