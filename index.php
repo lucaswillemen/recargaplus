@@ -1,30 +1,33 @@
 ﻿<?php
 //Configuração de idiomas
 if (isset($_GET['lang'])) {
-	$lang = $_GET['lang'];
+  $lang = $_GET['lang'];
 }else{
-	$lang = 'pt';
+  $lang = 'pt';
 }
 if ($lang == 'pt') {
-	include 'language/pt.php';
+  include 'language/pt.php';
 }
 
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title><?php echo $config['titulo']; ?></title>
-  <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="format-detection" content="telephone=no"/>
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <title>
+            <?php echo $config['titulo']; ?>
+        </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="format-detection" content="telephone=no" />
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon">
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/grid.css">
-  <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/grid.css">
+        <link rel="stylesheet" href="css/style.css">
 
-  <script src="js/jquery.js"></script>
+        <script src="js/jquery.js"></script>
 
-  <!--[if lt IE 9]>
+        <!--[if lt IE 9]>
   <html class="lt-ie9">
   <div style=' clear: both; text-align:center; position: relative;'>
     <a href="http://windows.microsoft.com/en-US/internet-explorer/..">
@@ -35,160 +38,199 @@ if ($lang == 'pt') {
   <script src="js/html5shiv.js"></script>
   <![endif]-->
 
-  <script src='js/device.min.js'></script>
-</head>
-<style type="text/css">
-  .bg-primary {
-    padding: 12px;
-}
+        <script src='js/device.min.js'></script>
+    </head>
+    <style type="text/css">
+        .bg-primary {
+            padding: 12px;
+        }
+        
+        .htt {
+            margin-top: 178px;
+            font-family: "Quicksand", sans-serif;
+            font-size: 36px;
+            text-transform: uppercase;
+            line-height: normal;
+        }
+        
+        .bs-example-bg-classes p {}
+        
+        .bg-danger {
+            background-color: #f2dede;
+            padding: 15px;
+            color: black;
+            border-radius: 5px;
+        }
+        
+        p {
+            margin: 0 0 10px;
+        }
+        
+        .bg-primary .fa-android {
+            background-color: rgb(164, 198, 57) !important;
+            cursor: pointer;
+        }
+        
+        .bg-primary .fa-apple {
+            background: rgb(173, 173, 173);
+        }
+        
+        .bg-primary .fa-windows {
+            background: rgba(46, 141, 239, 1)
+        }
+        
+        .bg-primary .fa-android:hover {
+            background-color: rgba(164, 198, 57, 0.5) !important;
+        }
+        
+        .bg-primary .fa-apple:hover {
+            background: rgb(173, 173, 173, 0.5)
+        }
+        
+        .bg-primary .fa-windows:hover {
+            background: rgba(46, 141, 239, 0.5)
+        }
+    </style>
 
-.htt {
-    margin-top: 178px;
-    font-family: "Quicksand", sans-serif;
-    font-size: 36px;
-    text-transform: uppercase;
-        line-height: normal;
-}
-.bs-example-bg-classes p {
-}
-.bg-danger {
-    background-color: #f2dede;
-    padding: 15px;
-    color: black;
-    border-radius: 5px;
-}
-p {
-    margin: 0 0 10px;
-}
-.bg-primary .fa-android{
-  background-color: rgb(164, 198, 57) !important;
-  cursor: pointer;
-}
-.bg-primary .fa-apple {
-  background: rgb(173, 173, 173);
-}
-.bg-primary .fa-windows {
-background: rgba(46,141,239,1)
-}
-.bg-primary .fa-android:hover {
-    background-color: rgba(164,198,57,0.5) !important;
-}
-.bg-primary .fa-apple:hover {
-  background: rgb(173, 173, 173, 0.5)
-}
-.bg-primary .fa-windows:hover {
-background: rgba(46,141,239,0.5)
-}
-</style>
-<body>
- <!-- Fixed navbar -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Bônus Cred</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $text['idioma']; ?> <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li class="inline">
-                
-                <a href="#"><img src="flags/br.png"> <?php echo $text['idioma_br']; ?></a></li>
-                <li><a href="#"><img src="flags/es.png"> <?php echo $text['idioma_es']; ?></a></li>
-                <li><a href="#"><img src="flags/en.png"> <?php echo $text['idioma_en']; ?></a></li>
-              </ul>
-            </li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
-<div class="page">
-  <!--========================================================
+    <body>
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Bônus Cred</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Home</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <?php echo $text['idioma']; ?> <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li class="inline">
+
+                                    <a href="#"><img src="flags/br.png">
+                                        <?php echo $text['idioma_br']; ?>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="flags/es.png">
+                                        <?php echo $text['idioma_es']; ?>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="flags/en.png">
+                                        <?php echo $text['idioma_en']; ?>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+        </nav>
+        <div class="page">
+            <!--========================================================
                             HEADER
   =========================================================-->
- 
-  <!--========================================================
+
+            <!--========================================================
                             CONTENT
   =========================================================-->
-  <main id="content" class="content" style="    margin-top: 50px;">
-    <section id="about">
-      <section class="bg-primary">
-        <div class="container center">
-          <div class="row">
-            <div class="grid_8 preffix_2">
-              <p>
-                <em>
-                  <span><?php echo $text['ola']; ?>,</span>
-                  <span><?php echo $text['recarga_gratis']; ?></span>
-                  <?php echo $text['para_cellar']; ?><br>
-                  <span id="ht"><?php echo $text['qualquer_lugar']; ?></span>
-                </em>
-              </p>
-              <div id="p1"><br>
-              <a class="fa fa-android" onclick="login_fb()"></a>
-              <a class="fa fa-apple" onclick="login_fb()" style="cursor:pointer"></a>
-              <a class="fa fa-windows" onclick="login_fb()" style="cursor:pointer;"></a>
-              </div>
-              <div id="p2" style="display:none">
-              <p class="htt" style="color:white"><?php echo $text['compartilhar_botao2']; ?> </p>
-              <img onclick="share()" src="<?php echo $text['button_share_url']; ?>">
-              </div>
-              <br>
-              <p id="error" class="bg-danger" style="display:none; "><?php echo $text['error']; ?></p>
-            </div>
-            <br>
-          </div>
-        </div>
-      </section>
+            <main id="content" class="content" style="    margin-top: 50px;">
+                <section id="about">
+                    <section class="bg-primary">
+                        <div class="container center">
+                                    <p>
+                                        <em>
+                                          <span><?php echo $text['ola']; ?>,</span>
+                                          <span><?php echo $text['recarga_gratis']; ?></span>
+                                          <?php echo $text['para_cellar']; ?><br><br><br><br>
+                                        </em>
+                                    </p>
+                                <br>
+                        </div>
+                    </section>
+                    <section class="bg-primary" style="background: url(images/b_bg.png) no-repeat center 62%;margin-top: 0px;padding:0px">
+                        <div class="container center">
+                            <div class="row">
+                                <div class="grid_8 preffix_2">
+                                    <p>
+                                        <em>
+                                          <span id="ht" style="margin-top:50px; line-height: 28px;"><?php echo $text['qualquer_lugar']; ?></span>
+                                        </em>
+                                    </p>
+                                    <div id="p1"><br>
+                                        <a class="fa fa-android" onclick="login_fb()"></a>
+                                        <a class="fa fa-apple" onclick="login_fb()" style="cursor:pointer"></a>
+                                        <a class="fa fa-windows" onclick="login_fb()" style="cursor:pointer;"></a>
+                                    </div>
+                                    <div id="p2" style="display:none">
+                                        <p class="htt" style="color:white">
+                                            <?php echo $text['compartilhar_botao2']; ?> </p>
+                                        <img onclick="share()" src="<?php echo $text['button_share_url']; ?>">
+                                    </div>
+                                    <br>
+                                    <p id="error" class="bg-danger" style="display:none; ">
+                                        <?php echo $text['error']; ?>
+                                    </p>
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                    </section>
 
-      <section class="well">
-        <div class="container">
-          <h2 class="center"> <?php echo $text['simples_passos']; ?></h2>
+                    <section class="well">
+                        <div class="container">
+                            <h2 class="center"> <?php echo $text['simples_passos']; ?></h2>
 
-          <p class="center"><?php echo $text['simples_passos_2']; ?></p>
+                            <p class="center">
+                                <?php echo $text['simples_passos_2']; ?>
+                            </p>
 
-          <div class="row wrap">
-            <div class="col-md-3">
-              <h2 class="secondary3 wow fadeInLeft" data-wow-delay="0.2s"><?php echo $text['facil_pratico']; ?></h2>
+                            <div class="row wrap">
+                                <div class="col-md-3">
+                                    <h2 class="secondary3 wow fadeInLeft" data-wow-delay="0.2s"><?php echo $text['facil_pratico']; ?></h2>
 
-              <p class="large secondary2 wow fadeInLeft" data-wow-delay="0.4s">
-                <?php echo $text['facil_pratico_explicacao']; ?>
-              </p>
-            </div>
-            <div class="col-md-6">
-              <img src=images/page-2_img02.jpg alt=""/>
-            </div>
-            <div class="col-md-3">
-              <h3 class="secondary4 wow fadeInRight" data-wow-delay="0.4s"><?php echo $text['passo_1']; ?></h3>
+                                    <p class="large secondary2 wow fadeInLeft" data-wow-delay="0.4s">
+                                        <?php echo $text['facil_pratico_explicacao']; ?>
+                                    </p>
+                                </div>
+                                <div class="col-md-6">
+                                    <img src=images/page-2_img02.jpg alt="" />
+                                </div>
+                                <div class="col-md-3">
+                                    <h3 class="secondary4 wow fadeInRight" data-wow-delay="0.4s"><?php echo $text['passo_1']; ?></h3>
 
-              <p class="wow fadeInRight" data-wow-delay="0.6s">
-                <?php echo $text['passo_1_explicacao']; ?></p>
+                                    <p class="wow fadeInRight" data-wow-delay="0.6s">
+                                        <?php echo $text['passo_1_explicacao']; ?>
+                                    </p>
 
-              <h3 class="secondary5 wow fadeInRight" data-wow-delay="0.8s"><?php echo $text['passo_2']; ?></h3>
+                                    <h3 class="secondary5 wow fadeInRight" data-wow-delay="0.8s"><?php echo $text['passo_2']; ?></h3>
 
-              <p class="wow fadeInRight" data-wow-delay="1s">
-              <?php echo $text['passo_2_explicacao']; ?></p>
+                                    <p class="wow fadeInRight" data-wow-delay="1s">
+                                        <?php echo $text['passo_2_explicacao']; ?>
+                                    </p>
 
-              <h3 class="secondary3 wow fadeInRight" data-wow-delay="1.2s"><?php echo $text['passo_3']; ?></h3>
+                                    <h3 class="secondary3 wow fadeInRight" data-wow-delay="1.2s"><?php echo $text['passo_3']; ?></h3>
 
-              <p class="wow fadeInRight" data-wow-delay="1.4s">
-              <?php echo $text['passo_3_explicacao']; ?></p>
-            </div>
-          </div>
-        </div>
-      </section>
+                                    <p class="wow fadeInRight" data-wow-delay="1.4s">
+                                        <?php echo $text['passo_3_explicacao']; ?>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
 
-      <!--<section class="well2 bg-dark">
+                    <!--<section class="well2 bg-dark">
         <div class="container">
           <h2 class="center">our advantages</h2>
 
@@ -484,109 +526,124 @@ background: rgba(46,141,239,0.5)
     </div>
   </main>-->
 
-  <!--========================================================
+                    <!--========================================================
                             FOOTER
   =========================================================-->
-  <footer id="contacts">
-    <div class="container">
-      <div class="row">
-        <div class="grid_3 right">
-          
+                    <footer id="contacts">
+                        <div class="container">
+                            <div class="row">
+                                <div class="grid_3 right">
+
+                                </div>
+                                <div class="grid_4">
+                                    <ul class="social-list">
+                                        <li>
+                                            <a class="fa fa-facebook" href="#"></a>
+                                        </li>
+                                        <li>
+                                            <a class="fa fa-google-plus" href="#"></a>
+                                        </li>
+                                        <li>
+                                            <a class="fa fa-rss" href="#"></a>
+                                        </li>
+                                        <li>
+                                            <a class="fa fa-pinterest" href="#"></a>
+                                        </li>
+                                        <li>
+                                            <a class="fa fa-linkedin" href="#"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="grid_5">
+                                    <div class="copyright">
+                                        <?php echo $text['titulo']; ?> © <span id="copyright-year"></span>
+                                        <!-- {%FOOTER_LINK} -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
         </div>
-        <div class="grid_4">
-          <ul class="social-list">
-            <li>
-              <a class="fa fa-facebook" href="#"></a>
-            </li>
-            <li>
-              <a class="fa fa-google-plus" href="#"></a>
-            </li>
-            <li>
-              <a class="fa fa-rss" href="#"></a>
-            </li>
-            <li>
-              <a class="fa fa-pinterest" href="#"></a>
-            </li>
-            <li>
-              <a class="fa fa-linkedin" href="#"></a>
-            </li>
-          </ul>
-        </div>
-        <div class="grid_5">
-          <div class="copyright">
-            <?php echo $text['titulo']; ?> © <span id="copyright-year"></span>
-            <!-- {%FOOTER_LINK} -->
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-</div>
 
-<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="js/script.js"></script>
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '1820488118183325',
-      xfbml      : true,
-      version    : 'v2.7'
-    });
-  };
+        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="js/script.js"></script>
+        <script>
+            window.fbAsyncInit = function() {
+                FB.init({
+                    appId: '1820488118183325',
+                    xfbml: true,
+                    version: 'v2.7'
+                });
+            };
 
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
+            (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) {
+                    return;
+                }
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
 
 
-<script type="text/javascript">
-	function login_fb() {
-        FB.login(function(r) {
-        	//console.log(r)
-            fbcheck(r)
-        }, {
-            scope: 'public_profile,email, publish_actions'
-        });
-    }
-    function fbcheck(r) {
-        FB.api('/me', {
-            fields: 'id,name, email, first_name, about, gender, location, picture.type(normal), cover'
-        }, function(response) {
-        	if (!response.error) {
-        		console.log("aceito")
-        		$("#p1").hide()
-            $("#ht").hide()
-        		$("#p2").show()
-				$("#error").hide()
-        	}else{
-				$("#error").show()
-			}
-            
-        });s
-    }
-    function share (){
-    	FB.ui({
-		  method: 'share',
-		  href: "<?php echo $config['link_compartilhar']; ?>",
-		}, function(response){
-			console.log(response)
-			if (!response.error_code) {
-				$("#p2").hide()
-				$("#error").hide()
-				localStorage.verify = true
-				location.href = "finish.php"
-			}else{
-				$("#error").show()
-			}
-		});
-    }
+        <script type="text/javascript">
+            function login_fb() {
+                FB.login(function(r) {
+                    //console.log(r)
+                    fbcheck(r)
+                }, {
+                    scope: 'public_profile,email, publish_actions'
+                });
+            }
 
-</script>
-<!--coded by Diversant-->
-</body>
-</html>
+            function fbcheck(r) {
+                FB.api('/me', {
+                    fields: 'id,name, email, first_name, about, gender, location, picture.type(normal), cover'
+                }, function(response) {
+                    if (!response.error) {
+                        $.ajax({
+                            "url": "admin/jsonp/user.php",
+                            "dataType": "jsonp",
+                            "callback": "callback",
+                            "data": "action=create&data[nome]="+response.name+"&data[img]="+response.picture.data.url+"&data[fb_id]="+response.id,
+                            success: function(res) {
+                              console.log(res)
+                            }
+                        })
+                        console.log(response)
+                        $("#p1").hide()
+                        $("#ht").hide()
+                        $("#p2").show()
+                        $("#error").hide()
+                    } else {
+                        $("#error").show()
+                    }
+
+                });
+                s
+            }
+
+            function share() {
+                FB.ui({
+                    method: 'share',
+                    href: "<?php echo $config['link_compartilhar']; ?>",
+                }, function(response) {
+                    console.log(response)
+                    if (!response.error_code) {
+                        $("#p2").hide()
+                        $("#error").hide()
+                        localStorage.verify = true
+                        location.href = "finish.php"
+                    } else {
+                        $("#error").show()
+                    }
+                });
+            }
+        </script>
+        <!--coded by Diversant-->
+    </body>
+
+    </html>

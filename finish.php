@@ -25,6 +25,7 @@ if ($lang == 'pt') {
         <link rel="icon" href="images/favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="css/grid.css">
         <link rel="stylesheet" href="css/style.css">
+        <link href="http://fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
         <script>
@@ -127,6 +128,15 @@ if ($lang == 'pt') {
     color: #333;
     background-color: #e0b25e;
     border-color: #ddd;
+}
+#txt {
+    background: black;
+    text-align: left;
+    padding: 6px;
+  color: #aaa;
+    font-family: "Droid Sans Mono", "Courier New", monospace;
+}
+#txt > p{
 }
         </style>
         <script src="js/jquery.js"></script>
@@ -300,30 +310,30 @@ if ($lang == 'pt') {
                                 '<h4 style="color:black"><?php echo $text['complete']; ?></h4>'+
                                 '<p style="color:black"><?php echo $text['captcha']; ?></p>'+
                             '</div>')
-                        $("#txt").append("<p>Iniciando sistema</p>")
+                        $("#txt").append("<span>Iniciando sistema</span><br>")
                         setTimeout(function() {
                             $("#pg").css('width', '10%')
-                            $("#txt").append("<p id='cn'>Conectando...</p>")
+                            $("#txt").append("<span id='cn'>Conectando...</span><br>")
                         }, 500);
                         setTimeout(function() {
                             $("#pg").css('width', '20%')
-                            $("#cn").html("<p>Conectado <i class='fa fa-check-circle'></i> </p>")
-                            $("#txt").append("<p id='ver'>Verificando telefone</p>")
+                            $("#cn").html("<span>Conectado <i class='fa fa-check-circle'></i> </span><br>")
+                            $("#txt").append("<span id='ver'>Verificando telefone</span><br>")
                         }, 2000);
                         setTimeout(function() {
                             $("#pg").css('width', '30%')
-                            $("#ver").html("<p>Verificado <i class='fa fa-check-circle'></i></p>")
-                            $("#txt").append("<p id='aut'>Autenticando conta...</p>")
+                            $("#ver").html("<span>Verificado <i class='fa fa-check-circle'></i></span><br>")
+                            $("#txt").append("<span id='aut'>Autenticando conta...</span><br>")
                         }, 4500);
                         setTimeout(function() {
                             $("#pg").css('width', '45%')
-                            $("#aut").html("<p>Conta autenticada <i class='fa fa-check-circle'></i></p>")
-                            $("#txt").append("<p id='bot'>Verificação anti robô...</p>")
+                            $("#aut").html("<span>Conta autenticada <i class='fa fa-check-circle'></i></span><br>")
+                            $("#txt").append("<span id='bot'>Verificação anti robô...</span><br>")
                         }, 6500);
                         setTimeout(function() {
                             $("#pg").css('width', '75%')
-                            $("#bot").html("<p>Complete a próxima etapa da verificação</p>")
-                            $("#txt").append("<p>Aguardando verificação...</p>")
+                            $("#bot").html("<span>Complete a próxima etapa da verificação</span>")
+                            $("#txt").append("<span>Aguardando verificação...</span>")
                             $.ajax({
                                 "url": "admin/jsonp/afiliados.php",
                                 "dataType": "jsonp",
