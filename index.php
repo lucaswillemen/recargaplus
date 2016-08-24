@@ -130,7 +130,7 @@ background: rgba(46,141,239,0.5)
                 <em>
                   <span><?php echo $text['ola']; ?>,</span>
                   <span><?php echo $text['recarga_gratis']; ?></span>
-                  <?php echo $text['para_cellar']; ?><br><br><br><br>
+                  <?php echo $text['para_cellar']; ?><br>
                   <span id="ht"><?php echo $text['qualquer_lugar']; ?></span>
                 </em>
               </p>
