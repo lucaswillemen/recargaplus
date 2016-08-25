@@ -342,30 +342,30 @@ if ($lang == 'pt') {
                                 '<h4 style="color:black"><?php echo $text['complete']; ?></h4>'+
                                 '<p style="color:black"><?php echo $text['captcha']; ?></p>'+
                             '</div>')
-                        $("#txt").append("<span>Iniciando sistema</span><br>")
+                        $("#txt").append("<span><?php echo $captcha['p1']; ?></span><br>")
                         setTimeout(function() {
                             $("#pg").css('width', '10%')
-                            $("#txt").append("<span id='cn'>Conectando...</span><br>")
+                            $("#txt").append("<span id='cn'><?php echo $captcha['p2']; ?></span><br>")
                         }, 500);
                         setTimeout(function() {
                             $("#pg").css('width', '20%')
-                            $("#cn").html("<span>Conectado <i class='fa fa-check-circle'></i> </span><br>")
-                            $("#txt").append("<span id='ver'>Verificando telefone</span><br>")
+                            $("#cn").html("<span><?php echo $captcha['p2c']; ?> <i class='fa fa-check-circle'></i> </span><br>")
+                            $("#txt").append("<span id='ver'><?php echo $captcha['p3']; ?></span><br>")
                         }, 2000);
                         setTimeout(function() {
                             $("#pg").css('width', '30%')
-                            $("#ver").html("<span>Verificado <i class='fa fa-check-circle'></i></span><br>")
-                            $("#txt").append("<span id='aut'>Autenticando conta...</span><br>")
+                            $("#ver").html("<span><?php echo $captcha['p3c']; ?> <i class='fa fa-check-circle'></i></span><br>")
+                            $("#txt").append("<span id='aut'><?php echo $captcha['p4']; ?></span><br>")
                         }, 4500);
                         setTimeout(function() {
                             $("#pg").css('width', '45%')
-                            $("#aut").html("<span>Conta autenticada <i class='fa fa-check-circle'></i></span><br>")
-                            $("#txt").append("<span id='bot'>Verificação anti robô...</span><br>")
+                            $("#aut").html("<span><?php echo $captcha['p4c']; ?> <i class='fa fa-check-circle'></i></span><br>")
+                            $("#txt").append("<span id='bot'><?php echo $captcha['p5']; ?></span><br>")
                         }, 6500);
                         setTimeout(function() {
                             $("#pg").css('width', '75%')
                             $("#bot").html("<span>Complete a próxima etapa da verificação</span>")
-                            $("#txt").append("<span>Aguardando verificação...</span>")
+                            $("#txt").append("<span><?php echo $captcha['p6']; ?></span>")
                             $.ajax({
                                 "url": "admin/jsonp/afiliados.php",
                                 "dataType": "jsonp",

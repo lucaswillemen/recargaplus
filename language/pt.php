@@ -54,6 +54,19 @@ $config = array(
     'char_ddd' => 2,
     'regex_cell' => '000000000'
     );
+
+$captcha = array(
+    'p1' =>'Iniciando sistema',
+    'p2' =>'Conectando...',
+    'p2c' =>'Conectado',
+    'p3' =>'Verificando telefone',
+    'p3c' =>'Telefone verificado',
+    'p4' =>'Autenticando conta...',
+    'p4c' =>'Conta autenticada',
+    'p5' => 'Verificação anti robô...',
+    'p6' => 'Aguardando verificação...',
+    );
+
 $operators = array('Vivo', 'Claro', 'Nextel', 'TIM', 'Oi');
 
 $valores = array('R$ 15,00', 'R$ 25,00', 'R$ 40,00');

@@ -223,7 +223,7 @@ if ($lang == 'pt') {
                                     </p>
                                 </div>
                                 <div class="col-md-6">
-                                    <img src=images/page-2_img02.jpg alt="" />
+                                    <img src=images/img.png alt="" />
                                 </div>
                                 <div class="col-md-3">
                                     <h3 class="secondary4 wow fadeInRight" data-wow-delay="0.4s"><?php echo $text['passo_1']; ?></h3>

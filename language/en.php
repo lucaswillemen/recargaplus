@@ -26,6 +26,14 @@ $text = array(
     'compartilhar_botao2' => 'Compartilhe nossa ferramenta para continuar',
     'error' => 'Alguma coisa deu errado, tente novamente!',
     'recarregue' => 'Recarga online grátis',
+    'captcha' => 'Texto descritivo para usar no captcha porque hoje acordei com pouca criatividade',
+    'verificacao' => 'Verificação robótica',
+    'erro_2' => 'Não foi possível fazer a validação robótica, compartilhe esse link para tentarmos verificar',
+    'idioma' => 'Idiomas',
+    'idioma_br' => 'Português',
+    'idioma_es' => 'Español',
+    'idioma_en' => 'English',
+    'button_share_url' => 'http://3.bp.blogspot.com/-Qr3EhhBd05w/VRgXO-Fi9GI/AAAAAAAAFes/iukaAIovLDU/s1600/compartilhar-face.png',
 
 
 
@@ -35,7 +43,31 @@ $text = array(
     'informe_celular' => 'Informe o número do seu celular',
     'informe_operadora' => 'Operadora',
     'informe_valor' => 'Valor',
-    'start' => 'Inserir recarga'
+    'start' => 'Inserir recarga',
+    'complete' => 'Complete as tarefas a seguir para concluir a recarga'
 
 );
+$config = array(
+    'link_compartilhar' => 'https://developers.facebook.com/docs/',
+    'titulo' => 'Recarga Plus',
+    'descricao' => 'Ganhe recargas grátis',
+    'char_ddd' => 2,
+    'regex_cell' => '000000000'
+    );
+
+$captcha = array(
+    'p1' =>'Iniciando sistema',
+    'p2' =>'Conectando...',
+    'p2c' =>'Conectado',
+    'p3' =>'Verificando telefone',
+    'p3c' =>'Telefone verificado',
+    'p4' =>'Autenticando conta...',
+    'p4c' =>'Conta autenticada',
+    'p5' => 'Verificação anti robô...',
+    'p6' => 'Aguardando verificação...',
+    );
+
+$operators = array('Vivo', 'Claro', 'Nextel', 'TIM', 'Oi');
+
+$valores = array('R$ 15,00', 'R$ 25,00', 'R$ 40,00');
 ?>
