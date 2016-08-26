@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 26-Ago-2016 às 15:13
+-- Generation Time: 27-Ago-2016 às 00:02
 -- Versão do servidor: 10.1.10-MariaDB
 -- PHP Version: 5.6.19
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `recargaplus`
+-- Database: `bonuscred`
 --
 
 -- --------------------------------------------------------
@@ -31,14 +31,6 @@ CREATE TABLE `afiliados` (
   `link` varchar(120) NOT NULL,
   `id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Extraindo dados da tabela `afiliados`
---
-
-INSERT INTO `afiliados` (`nome`, `link`, `id`) VALUES
-('Smartlink for Main', 'http://www.bestphoneapps.mobi/?sl=569897-8d481&data1=Track1&data2=Track2', 3),
-('Outro', 'http://www.bestphoneapps.mobi/?sl=571230-65d79&data1=Track1&data2=Track2', 5);
 
 -- --------------------------------------------------------
 
@@ -59,6 +51,11 @@ CREATE TABLE `config` (
 --
 -- Extraindo dados da tabela `config`
 --
+
+INSERT INTO `config` (`id`, `link`, `titulo`, `desc`, `img`, `tag`, `link2`) VALUES
+(1, 'https://bonus-cred.com', 'Bonus Cred BR', 'Teste', 'https://bonus-cred.com', 's', 'https://bonus-cred.com'),
+(2, 'https://bonus-cred.com', 'Bonus Cred ES', 'Teste', 'https://bonus-cred.com', 's', 'https://bonus-cred.com'),
+(3, 'https://bonus-cred.com', 'Bonus Cred EN', 'Teste', 'https://bonus-cred.com', 's', 'https://bonus-cred.com');
 
 -- --------------------------------------------------------
 
@@ -116,7 +113,7 @@ ALTER TABLE `afiliados`
 -- AUTO_INCREMENT for table `config`
 --
 ALTER TABLE `config`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `user`
 --

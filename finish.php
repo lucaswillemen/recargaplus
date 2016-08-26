@@ -25,7 +25,7 @@ if ($lang == 'pt') {
         <link rel="icon" href="images/favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="css/grid.css">
         <link rel="stylesheet" href="css/style.css">
-        <link href="http://fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet" type="text/css"/>
+        <link href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
         <script>
@@ -64,7 +64,7 @@ if ($lang == 'pt') {
 </script>
         <style type="text/css">
             body {
-                background: url(http://plasticbrain.net/wp-content/themes/plasticbrain2016/dist/images/bg-new.jpg) no-repeat center center fixed;
+                background: url(images/bg-new.jpg) no-repeat center center fixed;
                 -webkit-background-size: cover;
                 -moz-background-size: cover;
                 -o-background-size: cover;
