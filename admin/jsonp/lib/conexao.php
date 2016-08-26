@@ -1,5 +1,5 @@
 <?php 
-$db = "recargaplus";
+$db = "bonuscred";
 $host = "localhost"; 
 $username = "root"; 
 $password = "";

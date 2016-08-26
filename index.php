@@ -8,6 +8,12 @@ if (isset($_GET['lang'])) {
 if ($lang == 'pt') {
   include 'language/pt.php';
 }
+if ($lang == 'en') {
+  include 'language/en.php';
+}
+if ($lang == 'es') {
+  include 'language/es.php';
+}
 
 ?>
     <!DOCTYPE html>
@@ -120,17 +126,17 @@ if ($lang == 'pt') {
                             <ul class="dropdown-menu">
                                 <li class="inline">
 
-                                    <a href="#"><img src="flags/br.png">
+                                    <a href="?lang=pt"><img src="flags/br.png">
                                         <?php echo $text['idioma_br']; ?>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#"><img src="flags/es.png">
+                                    <a href="?lang=es"><img src="flags/es.png">
                                         <?php echo $text['idioma_es']; ?>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#"><img src="flags/en.png">
+                                    <a href="?lang=en"><img src="flags/en.png">
                                         <?php echo $text['idioma_en']; ?>
                                     </a>
                                 </li>

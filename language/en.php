@@ -1,10 +1,13 @@
 <?php
+include 'admin/jsonp/lib/conexao.php';
+$consulta = $conn->query("SELECT * FROM config");
+$linha = $consulta->fetchAll(PDO::FETCH_ASSOC);
 $text = array(
     'titulo' => 'Recarga PLUS',
     'descricao' => 'Desrição do site',
     'titulo_1' => 'Recarga',
     'titulo_2' => 'Plus',
-    'ola' => 'Olá',
+    'ola' => 'Hello',
     'recarga_gratis' => 'Recarga grátis',
     'para_cellar' => 'Para o seu celular',
     'qualquer_lugar' => 'Selecione o seu sistema para iniciar',
@@ -48,10 +51,11 @@ $text = array(
 
 );
 $config = array(
-    'link_compartilhar' => 'https://developers.facebook.com/docs/',
-    'titulo' => 'Recarga Plus',
-    'descricao' => 'Ganhe recargas grátis',
-    'char_ddd' => 2,
+    'link_compartilhar' => $linha[2]['link'],
+    'link_compartilhar2' => $linha[2]['link2'],
+    'titulo' => $linha[2]['titulo'],
+    'link_compartilhar2' => $linha[2]['desc'],
+    'char_ddd' => 3,
     'regex_cell' => '000000000'
     );
 

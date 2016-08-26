@@ -10,5 +10,20 @@ $conn->exec("SET NAMES `utf8`");
 ?>';
 fwrite($myfile, $txt);
 fclose($myfile);
-echo "Configuração realizada com sucesso"
+
+
+$db = $_GET['db'];
+$host = $_GET['host']; 
+$username = $_GET['user']; 
+$password = $_GET['pass'];
+//ENTER THE RELEVANT INFO BELOW
+$conn = new PDO( "mysql:host=$host;dbname=$db", "$username", "$password");
+
+$sql = file_get_contents('db.sql');
+
+$qr = $conn->exec($sql);
+
+
+
+echo "<br>Configuração realizada com sucesso"
 ?>

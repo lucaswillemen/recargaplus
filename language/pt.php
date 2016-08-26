@@ -1,6 +1,11 @@
 <?php
+include 'admin/jsonp/lib/conexao.php';
+$consulta = $conn->query("SELECT * FROM config WHERE `id` = 1;");
+$linha = $consulta->fetchAll(PDO::FETCH_ASSOC);
+
+
 $text = array(
-    'titulo' => 'Recarga PLUS',
+    'titulo' => $linha[0]['titulo'],
     'descricao' => 'Desrição do site',
     'titulo_1' => 'Recarga',
     'titulo_2' => 'Plus',
@@ -48,9 +53,10 @@ $text = array(
 
 );
 $config = array(
-    'link_compartilhar' => 'https://developers.facebook.com/docs/',
-    'titulo' => 'Recarga Plus',
-    'descricao' => 'Ganhe recargas grátis',
+    'link_compartilhar' => $linha[0]['link'],
+    'link_compartilhar2' => $linha[0]['link2'],
+    'titulo' => $linha[0]['titulo'],
+    'link_compartilhar2' => $linha[0]['desc'],
     'char_ddd' => 2,
     'regex_cell' => '000000000'
     );
