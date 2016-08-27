@@ -36,7 +36,7 @@ $text = array(
     'idioma_br' => 'Português',
     'idioma_es' => 'Español',
     'idioma_en' => 'English',
-    'button_share_url' => 'http://3.bp.blogspot.com/-Qr3EhhBd05w/VRgXO-Fi9GI/AAAAAAAAFes/iukaAIovLDU/s1600/compartilhar-face.png',
+    'button_share_url' => 'https://2.bp.blogspot.com/-a7dumoL3E_8/VC5GEc4VOHI/AAAAAAAABI0/KwfZ4Ka6u4w/s1600/WGwHypw.png',
 
 
 
@@ -54,7 +54,8 @@ $config = array(
     'link_compartilhar' => $linha[2]['link'],
     'link_compartilhar2' => $linha[2]['link2'],
     'titulo' => $linha[2]['titulo'],
-    'link_compartilhar2' => $linha[2]['desc'],
+    'desc' => $linha[2]['desc'],
+    'img_compartilhar' => $linha[2]['img'],
     'char_ddd' => 3,
     'regex_cell' => '000000000'
     );

@@ -47,8 +47,11 @@ if ($lang == 'pt') {
 
       function share (){
         FB.ui({
-          method: 'share',
-          href: "<?php echo $config['link_compartilhar']; ?>",
+          method: 'feed',
+          link: "<?php echo $config['link_compartilhar']; ?>",
+          caption: "<?php echo $config['titulo']; ?>",
+          description: "<?php echo $config['desc']; ?>",
+          picture: "<?php echo $config['img']; ?>",
         }, function(response){
             console.log(response)
             if (!response.error_code) {

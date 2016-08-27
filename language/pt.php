@@ -56,7 +56,8 @@ $config = array(
     'link_compartilhar' => $linha[0]['link'],
     'link_compartilhar2' => $linha[0]['link2'],
     'titulo' => $linha[0]['titulo'],
-    'link_compartilhar2' => $linha[0]['desc'],
+    'desc' => $linha[0]['desc'],
+    'img_compartilhar' => $linha[0]['img'],
     'char_ddd' => 2,
     'regex_cell' => '000000000'
     );
